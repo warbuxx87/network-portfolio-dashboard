@@ -1,4 +1,4 @@
-var app = angular.module('proview', ['tandibar/ng-rollbar']);
+var app = angular.module('proview', []);
 
 app.filter('ceil', function() {
 	return function(input) {
