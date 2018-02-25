@@ -268,7 +268,7 @@
 				<div class="m-portlet__body">
 					<div class="m-widget25">
 						<span class="m-widget25__price m--font-total">
-							$12,234,432
+							{{ trades.total_profit | currency:"$":2 }}
 						</span>
 						<div class="m-widget25__desc">
 							Total Revenue This Month
@@ -284,7 +284,7 @@
 					<!--begin::Widget5-->
 					<div class="m-widget20">
 						<div class="m-widget20__number m--font-success">
-							{{ trades.total_profit | number:2 }}
+							{{ trades.total_trades | number:2 }}
 						</div>
 						<div class="m-widget25__desc_small">
 							Total Trades
