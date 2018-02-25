@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" >
+<html lang="en" ng-app="proview">
 	<!-- begin::Head -->
 	<head>
 		<meta charset="utf-8" />
@@ -47,7 +47,7 @@
 	</head>
 	<!-- end::Head -->
     <!-- end::Body -->
-	<body class="m-page--wide m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default"  >
+	<body ng-controller="MainCtrl" class="m-page--wide m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default"  >
 		<!-- begin:: Page -->
 		<div class="m-grid m-grid--hor m-grid--root m-page">
 			<!-- begin::Header -->
@@ -284,7 +284,7 @@
 					<!--begin::Widget5-->
 					<div class="m-widget20">
 						<div class="m-widget20__number m--font-success">
-							670
+							{{ trades.total_profit | number:2 }}"
 						</div>
 						<div class="m-widget25__desc_small">
 							Total Trades
