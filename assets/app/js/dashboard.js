@@ -1336,7 +1336,7 @@ var Dashboard = function() {
 			return;
 		}
 
-		var datatable = $('.m_datatable').mDatatable({
+		var datatable = $('#m_datatable_exchange').mDatatable({
 			data: {
 				type: 'remote',
 				source: {
@@ -1400,7 +1400,7 @@ var Dashboard = function() {
 			return;
 		}
 
-		var datatable = $('.m_datatable').mDatatable({
+		var datatable = $('#m_datatable_exchanges').mDatatable({
 			data: {
 				type: 'remote',
 				source: {
