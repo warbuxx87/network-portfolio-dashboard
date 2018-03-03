@@ -1408,27 +1408,16 @@ var Dashboard = function() {
 						//url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
 						url: 'https://data.alkemi.ai/CustomBots/bot1.json',
 						method: 'GET',
-						map: function(raw) {
-							// sample data mapping
-							var dataSet = raw;
-							var orderStatus = "";
-							if (typeof raw.data == 'xxx') {
-								dataSet = raw.InterExchangeArbitrageBot.CompletedOrders.BaseOrder;
-								console.log(dataSet);
-								return dataSet;
-							}
-						}
 					}
 				},
-
-				//pageSize: 10,
-				//saveState: {
-				//	cookie: false,
-				//	webstorage: true
-				//},
-				//serverPaging: true,
-				//serverFiltering: true,
-				//serverSorting: true
+				pageSize: 10,
+				saveState: {
+					cookie: false,
+					webstorage: true
+				},
+				serverPaging: true,
+				serverFiltering: true,
+				serverSorting: true
 			},
 
 			layout: {
@@ -1447,7 +1436,7 @@ var Dashboard = function() {
 
 			columns: [{
 				field: "OrderId",
-				title: "OrderId",
+				title: "Id",
 				width: 140,
 				responsive: {
 					visible: 'lg'
