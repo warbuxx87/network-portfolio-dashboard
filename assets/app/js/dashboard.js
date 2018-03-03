@@ -1342,7 +1342,7 @@ var Dashboard = function() {
 				source: {
 					read: {
 						//url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
-						url: 'https://data.alkemi.ai/Simulations/bitstamp.json'
+						url: 'https://api.alkemi.ai/exchange/gemini'
 					}
 				},
 				pageSize: 10,
