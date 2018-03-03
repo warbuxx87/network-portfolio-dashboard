@@ -1405,7 +1405,8 @@ var Dashboard = function() {
 				type: 'remote',
 				source: {
 					read: {
-						url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
+						//url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
+						url: 'https://data.alkemi.ai/CustomBots/bot1.json'
 					}
 				},
 				pageSize: 10,
@@ -1433,27 +1434,27 @@ var Dashboard = function() {
 			pagination: true,
 
 			columns: [{
-				field: "ShipName",
-				title: "ROUTE",
+				field: "OrderId",
+				title: "Id",
 				width: 140,
 				responsive: {
 					visible: 'lg'
 				}
 			}, {
-				field: "ShipDate",
-				title: "TRADES",
+				field: "OrderStatus",
+				title: "Status",
 				width: 80
 			}, {
-				field: "ShipDate",
-				title: "PROFIT",
+				field: "OrderType",
+				title: "Type",
 				width: 80
 			}, {
-				field: "ShipDate",
-				title: "ROI%",
+				field: "Amount",
+				title: "Amount",
 				width: 80
 			}, {
-				field: "ShipDate",
-				title: "AVG.EARN",
+				field: "UnixAddedTime",
+				title: "Date",
 				width: 80
 			}]
 		});
