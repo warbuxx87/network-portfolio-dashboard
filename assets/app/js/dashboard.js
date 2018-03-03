@@ -1430,7 +1430,7 @@ var Dashboard = function() {
 
 			sortable: true,
 
-			filterable: false,
+			filterable: true,
 
 			pagination: true,
 
