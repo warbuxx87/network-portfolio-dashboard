@@ -1350,9 +1350,9 @@ var Dashboard = function() {
 					cookie: false,
 					webstorage: true
 				},
-				serverPaging: true,
-				serverFiltering: true,
-				serverSorting: true
+				//serverPaging: true,
+				//serverFiltering: true,
+				//serverSorting: true
 			},
 
 			layout: {
@@ -1365,7 +1365,7 @@ var Dashboard = function() {
 
 			sortable: true,
 
-			filterable: false,
+			filterable: true,
 
 			pagination: true,
 
