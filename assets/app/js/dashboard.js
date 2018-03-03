@@ -1414,17 +1414,17 @@ var Dashboard = function() {
 					// sample data mapping
 					var dataSet = raw;
 					var orderStatus = "";
-					if (typeof raw.data !== 'json') {
+					if (typeof raw.data == 'json') {
 						dataSet = raw.InterExchangeArbitrageBot.CompletedOrders.BaseOrder;
 						console.log(dataSet);
 						return dataSet;
 					}
-				},
-				pageSize: 10,
-				saveState: {
-					cookie: false,
-					webstorage: true
-				},
+				}
+				//pageSize: 10,
+				//saveState: {
+				//	cookie: false,
+				//	webstorage: true
+				//},
 				//serverPaging: true,
 				//serverFiltering: true,
 				//serverSorting: true
