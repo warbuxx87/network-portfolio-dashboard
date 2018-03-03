@@ -1419,7 +1419,7 @@ var Dashboard = function() {
 						console.log(dataSet);
 						return dataSet;
 					}
-				}
+				},
 				pageSize: 10,
 				saveState: {
 					cookie: false,
