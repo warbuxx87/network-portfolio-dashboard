@@ -1341,7 +1341,8 @@ var Dashboard = function() {
 				type: 'remote',
 				source: {
 					read: {
-						url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
+						//url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
+						url: 'https://data.alkemi.ai/Simulations/bitstamp.json'
 					}
 				},
 				pageSize: 10,
@@ -1369,27 +1370,27 @@ var Dashboard = function() {
 			pagination: true,
 
 			columns: [{
-				field: "ShipName",
-				title: "ROUTE",
+				field: "AddedTime",
+				title: "Date",
 				width: 140,
 				responsive: {
 					visible: 'lg'
 				}
 			}, {
-				field: "ShipDate",
-				title: "TRADES",
+				field: "Origin",
+				title: "Route",
 				width: 80
 			}, {
-				field: "ShipDate",
-				title: "PROFIT",
+				field: "OrderTypeAsString",
+				title: "Type",
 				width: 80
 			}, {
-				field: "ShipDate",
-				title: "ROI%",
+				field: "Amount",
+				title: "Amount",
 				width: 80
 			}, {
-				field: "ShipDate",
-				title: "AVG.EARN",
+				field: "Price",
+				title: "Price",
 				width: 80
 			}]
 		});
