@@ -1415,9 +1415,9 @@ var Dashboard = function() {
 					cookie: false,
 					webstorage: true
 				},
-				serverPaging: true,
-				serverFiltering: true,
-				serverSorting: true
+				//serverPaging: true,
+				//serverFiltering: true,
+				//serverSorting: true
 			},
 
 			layout: {
