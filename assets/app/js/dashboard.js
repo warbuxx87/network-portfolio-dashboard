@@ -1435,8 +1435,8 @@ var Dashboard = function() {
 			pagination: true,
 
 			columns: [{
-				field: "history.OrderId",
-				title: "Id",
+				field: "UnixAddedTime",
+				title: "Date",
 				width: 140,
 				responsive: {
 					visible: 'lg'
@@ -1454,8 +1454,8 @@ var Dashboard = function() {
 				title: "Amount",
 				width: 80
 			}, {
-				field: "UnixAddedTime",
-				title: "Date",
+				field: "Price",
+				title: "Price",
 				width: 80
 			}]
 		});
