@@ -90,7 +90,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 		var total_trades = 0;
 		var usd = 0;
 		var btc = 0;
-		$http.get('https://api.alkemi.ai/trades')
+		$http.get('https://api.alkemi.ai')
 			.then(function(response) {
 				$scope.trades = response.data;
 				for (var i = 0; i < response.data.bots.length; i++) {
