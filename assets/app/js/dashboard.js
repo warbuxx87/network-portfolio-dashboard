@@ -1406,8 +1406,17 @@ var Dashboard = function() {
 				source: {
 					read: {
 						//url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
-						url: 'https://data.alkemi.ai/CustomBots/bot1.json'
+						url: 'https://data.alkemi.ai/CustomBots/bot1.json',
+						method: 'GET'
 					}
+				},
+				map: function(raw) {
+					// sample data mapping
+					var dataSet = raw;
+					if (typeof raw.data !== 'undefined') {
+						dataSet = raw.data;
+					}
+					return dataSet;
 				},
 				pageSize: 10,
 				saveState: {
