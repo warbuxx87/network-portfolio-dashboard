@@ -8,6 +8,8 @@ app.filter('ceil', function() {
 
 app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 	$scope.btc = []
+	$scope.ltc = []
+	$scope.eth = []
 	$scope.trades = []
 	$scope.balance = []
 
