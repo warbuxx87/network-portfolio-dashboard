@@ -1446,26 +1446,26 @@ var Dashboard = function() {
 			pagination: true,
 
 			columns: [{
-				field: "InterExchangeArbitrageBot.CompletedOrders.BaseOrder.Id",
+				field: "dataSet.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.Id",
 				title: "Id",
 				width: 140,
 				responsive: {
 					visible: 'lg'
 				}
 			}, {
-				field: "InterExchangeArbitrageBot.CompletedOrders.BaseOrder.OrderStatus",
+				field: "dataSet.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.OrderStatus",
 				title: "Status",
 				width: 80
 			}, {
-				field: "InterExchangeArbitrageBot.CompletedOrders.BaseOrder.OrderType",
+				field: "dataSet.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.OrderType",
 				title: "Type",
 				width: 80
 			}, {
-				field: "InterExchangeArbitrageBot.CompletedOrders.BaseOrder.Amount",
+				field: "dataSet.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.Amount",
 				title: "Amount",
 				width: 80
 			}, {
-				field: "InterExchangeArbitrageBot.CompletedOrders.BaseOrder.UnixAddedTime",
+				field: "dataSet.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.UnixAddedTime",
 				title: "Date",
 				width: 80
 			}]
