@@ -1415,7 +1415,7 @@ var Dashboard = function() {
 					var dataSet = raw;
 					var orderStatus = "";
 					if (typeof raw.data !== 'undefined') {
-						dataSet = raw.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder;
+						dataSet = raw.data.CompletedOrders.BaseOrder;
 						console.log(dataSet);
 
 					}
