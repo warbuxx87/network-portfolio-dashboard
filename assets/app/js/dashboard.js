@@ -1446,26 +1446,26 @@ var Dashboard = function() {
 			pagination: true,
 
 			columns: [{
-				field: "OrderId",
+				field: "InterExchangeArbitrageBot.CompletedOrders.BaseOrder.Id",
 				title: "Id",
 				width: 140,
 				responsive: {
 					visible: 'lg'
 				}
 			}, {
-				field: "OrderStatus",
+				field: "InterExchangeArbitrageBot.CompletedOrders.BaseOrder.OrderStatus",
 				title: "Status",
 				width: 80
 			}, {
-				field: "OrderType",
+				field: "InterExchangeArbitrageBot.CompletedOrders.BaseOrder.OrderType",
 				title: "Type",
 				width: 80
 			}, {
-				field: "Amount",
+				field: "InterExchangeArbitrageBot.CompletedOrders.BaseOrder.Amount",
 				title: "Amount",
 				width: 80
 			}, {
-				field: "UnixAddedTime",
+				field: "InterExchangeArbitrageBot.CompletedOrders.BaseOrder.UnixAddedTime",
 				title: "Date",
 				width: 80
 			}]
