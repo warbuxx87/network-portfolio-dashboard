@@ -1413,8 +1413,10 @@ var Dashboard = function() {
 				map: function(raw) {
 					// sample data mapping
 					var dataSet = raw;
+					var orderStatus = "";
 					if (typeof raw.data !== 'undefined') {
-						dataSet = raw.data;
+						dataSet = raw.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder;
+
 					}
 					return dataSet;
 				},
