@@ -1412,7 +1412,7 @@ var Dashboard = function() {
 							// sample data mapping
 							var dataSet = raw;
 							var orderStatus = "";
-							if (typeof raw.data == 'json') {
+							if (typeof raw.data == 'xxx') {
 								dataSet = raw.InterExchangeArbitrageBot.CompletedOrders.BaseOrder;
 								console.log(dataSet);
 								return dataSet;
