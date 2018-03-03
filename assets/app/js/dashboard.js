@@ -1407,19 +1407,20 @@ var Dashboard = function() {
 					read: {
 						//url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
 						url: 'https://data.alkemi.ai/CustomBots/bot1.json',
-						method: 'GET'
+						method: 'GET',
+						map: function(raw) {
+							// sample data mapping
+							var dataSet = raw;
+							var orderStatus = "";
+							if (typeof raw.data == 'json') {
+								dataSet = raw.InterExchangeArbitrageBot.CompletedOrders.BaseOrder;
+								console.log(dataSet);
+								return dataSet;
+							}
+						}
 					}
 				},
-				map: function(raw) {
-					// sample data mapping
-					var dataSet = raw;
-					var orderStatus = "";
-					if (typeof raw.data == 'json') {
-						dataSet = raw.InterExchangeArbitrageBot.CompletedOrders.BaseOrder;
-						console.log(dataSet);
-						return dataSet;
-					}
-				}
+
 				//pageSize: 10,
 				//saveState: {
 				//	cookie: false,
