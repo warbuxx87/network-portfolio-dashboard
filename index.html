@@ -587,7 +587,7 @@
 							{{ trades.total_profit | currency:"$":2 }}
 						</span>
 										<div class="m-widget25__desc">
-											Total Revenue This Month
+											Total Revenue This Period
 										</div>
 									</div>
 								</div>
@@ -615,16 +615,16 @@
 									<!--end:: Widgets/Total Trades-->
 								</div>
 								<div class="col-xl-6 halfpad_left">
-									<!--begin:: Widgets/Total ROI-->
+									<!--begin:: Widgets/Weighted Index-->
 									<div class="m-portlet m-portlet--bordered-semi m-portlet--fit" style="min-height: 260px">
 										<div class="m-portlet__body">
 											<!--begin::Widget5-->
 											<div class="m-widget20">
 												<div class="m-widget20__number m--font-success">
-													1,222%
+													{{btc.idx | currency:"$":2 }}
 												</div>
 												<div class="m-widget25__desc_small">
-													Total ROI%
+													Index Value
 												</div>
 												<div class="m-widget20__chart" style="height:160px;">
 													<canvas id="m_chart_trade2"></canvas>
