@@ -62,10 +62,23 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				$scope.eth.margin = 0;
 				if (buy_market.buy_take < sell_market.sell_take)
 					$scope.eth.margin = sell_market.sell_take - buy_market.buy_take;
-				setTimeout(upd_btc, 1500);
+				setTimeout(upd_eth, 1500);
 			})
 			.catch(function() {
-				setTimeout(upd_btc, 1500);
+				setTimeout(upd_eth, 1500);
+			});
+	};
+
+
+	var upd_ltc = function() {
+		$http.get('https://www.worldcoinindex.com/apiservice/ticker?key=ngXm8ta8U3HqMv6IWeV5eSRFxkGFru&label=ltcbtc&fiat=usd')
+			.then(function(response) {
+				$scope.ltc = response.data;
+				$scope.ltc.idx = response.data[0].Price;
+				setTimeout(upd_ltc, 60000);
+			})
+			.catch(function() {
+				setTimeout(upd_ltc, 60000);
 			});
 	};
 
@@ -130,6 +143,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 
 	upd_btc();
 	upd_eth();
+	upd_ltc();
 	upd_trades();
 
 	// need this functions and assignments after upd_trades is called
