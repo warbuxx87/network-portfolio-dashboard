@@ -1409,12 +1409,12 @@ var Dashboard = function() {
 						url: 'https://api.alkemi.ai/bots',
 						method: 'GET',
 					}
-				},
-				pageSize: 10,
-				saveState: {
-					cookie: false,
-					webstorage: true
-				},
+				}
+				//pageSize: 10,
+				//saveState: {
+				//	cookie: false,
+				//	webstorage: true
+				//},
 				//serverPaging: true,
 				//serverFiltering: true,
 				//serverSorting: true
@@ -1427,11 +1427,8 @@ var Dashboard = function() {
 				height: 320,
 				footer: false
 			},
-
 			sortable: true,
-
 			filterable: true,
-
 			pagination: true,
 
 			columns: [{
