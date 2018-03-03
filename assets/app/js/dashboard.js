@@ -1406,7 +1406,7 @@ var Dashboard = function() {
 				source: {
 					read: {
 						//url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
-						url: 'https://api.alkemi.ai',
+						url: 'https://bots.alkemi.ai/',
 						method: 'GET',
 					}
 				},
