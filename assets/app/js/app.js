@@ -71,14 +71,14 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 
 
 	var upd_ltc = function() {
-		$http.get('https://www.worldcoinindex.com/apiservice/ticker?key=ngXm8ta8U3HqMv6IWeV5eSRFxkGFru&label=ltcbtc&fiat=usd')
+		$http.get('https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD')
 			.then(function(response) {
-				var ltc = response.data[0].Price;
+				var ltc = response.data.USD;
 				$scope.ltc.idx = ltc;
-				setTimeout(upd_ltc, 60000);
+				setTimeout(upd_ltc, 1500);
 			})
 			.catch(function() {
-				setTimeout(upd_ltc, 60000);
+				setTimeout(upd_ltc, 1500);
 			});
 	};
 
