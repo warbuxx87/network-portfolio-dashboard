@@ -1414,11 +1414,8 @@ var Dashboard = function() {
 					// sample data mapping
 					var dataSet = raw;
 					var orderStatus = "";
-					if (typeof raw.data !== 'undefined') {
-						dataSet = raw.data.CompletedOrders.BaseOrder;
-						console.log(dataSet);
-
-					}
+					dataSet = raw.data.CompletedOrders.BaseOrder;
+					console.log(dataSet);
 					return dataSet;
 				},
 				pageSize: 10,
@@ -1446,26 +1443,26 @@ var Dashboard = function() {
 			pagination: true,
 
 			columns: [{
-				field: "dataSet.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.Id",
-				title: "Id",
+				field: "OrderId",
+				title: "OrderId",
 				width: 140,
 				responsive: {
 					visible: 'lg'
 				}
 			}, {
-				field: "dataSet.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.OrderStatus",
+				field: "OrderStatus",
 				title: "Status",
 				width: 80
 			}, {
-				field: "dataSet.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.OrderType",
+				field: "OrderType",
 				title: "Type",
 				width: 80
 			}, {
-				field: "dataSet.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.Amount",
+				field: "Amount",
 				title: "Amount",
 				width: 80
 			}, {
-				field: "dataSet.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.UnixAddedTime",
+				field: "UnixAddedTime",
 				title: "Date",
 				width: 80
 			}]
