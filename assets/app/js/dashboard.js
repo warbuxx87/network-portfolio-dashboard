@@ -1006,9 +1006,9 @@ var Dashboard = function() {
 		var config = {
 			type: 'line',
 			data: {
-				labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October"],
+				labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
 				datasets: [{
-					label: "Total ROI%",
+					label: "Price",
 					backgroundColor: gradient,
 					borderColor: '#568ca8',
 
@@ -1046,7 +1046,7 @@ var Dashboard = function() {
 						gridLines: false,
 						scaleLabel: {
 							display: true,
-							labelString: 'Month'
+							labelString: 'Date'
 						}
 					}],
 					yAxes: [{
