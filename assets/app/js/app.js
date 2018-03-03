@@ -73,7 +73,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 	var upd_ltc = function() {
 		$http.get('https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD')
 			.then(function(response) {
-				var ltc = response;
+				var ltc = response.USD;
 				$scope.ltc.idx = ltc;
 				setTimeout(upd_ltc, 1500);
 			})
