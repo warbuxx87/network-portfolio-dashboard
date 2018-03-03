@@ -73,8 +73,8 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 	var upd_ltc = function() {
 		$http.get('https://www.worldcoinindex.com/apiservice/ticker?key=ngXm8ta8U3HqMv6IWeV5eSRFxkGFru&label=ltcbtc&fiat=usd')
 			.then(function(response) {
-				$scope.ltc = response.data;
-				$scope.ltc.idx = response.data[0].Price;
+				var ltc = response.data[0].Price;
+				$scope.ltc.idx = ltc;
 				setTimeout(upd_ltc, 60000);
 			})
 			.catch(function() {
