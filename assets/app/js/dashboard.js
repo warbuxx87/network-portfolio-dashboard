@@ -1342,14 +1342,14 @@ var Dashboard = function() {
 				source: {
 					read: {
 						//url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
-						url: 'https://api.alkemi.ai/exchange/gemini'
+						url: 'https://api.alkemi.ai/exchanges/gemini'
 					}
 				},
 				pageSize: 10,
-				saveState: {
-					cookie: false,
-					webstorage: true
-				},
+				//saveState: {
+				//	cookie: false,
+				//	webstorage: true
+				//},
 				//serverPaging: true,
 				//serverFiltering: true,
 				//serverSorting: true
