@@ -1406,7 +1406,7 @@ var Dashboard = function() {
 				source: {
 					read: {
 						//url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
-						url: 'https://data.alkemi.ai/CustomBots/bot1.json',
+						url: 'https://api.alkemi.ai',
 						method: 'GET',
 					}
 				},
@@ -1435,7 +1435,7 @@ var Dashboard = function() {
 			pagination: true,
 
 			columns: [{
-				field: "OrderId",
+				field: "history.OrderId",
 				title: "Id",
 				width: 140,
 				responsive: {
