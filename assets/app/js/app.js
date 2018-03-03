@@ -40,6 +40,35 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 			});
 	};
 
+	var upd_eth = function() {
+		$http.get('https://eth.alkemi.ai/updates')
+			.then(function(response) {
+				$scope.eth = response.data;
+				var buy_market = response.data.markets[0];
+				var sell_market = response.data.markets[0];
+				var total_volume = 0;
+				for (var i = 1; i < response.data.markets.length; i++) {
+					if (response.data.markets[i].buy_take < buy_market.buy_take)
+						buy_market = response.data.markets[i];
+					if (response.data.markets[i].sell_take > sell_market.sell_take)
+						sell_market = response.data.markets[i];
+				}
+				for (var i = 0; i < response.data.markets.length; i++) {
+					total_volume = total_volume + response.data.markets[i].volume;
+				}
+				$scope.eth.buy_market = buy_market;
+				$scope.eth.sell_market = sell_market;
+				$scope.eth.total_volume = total_volume;
+				$scope.eth.margin = 0;
+				if (buy_market.buy_take < sell_market.sell_take)
+					$scope.eth.margin = sell_market.sell_take - buy_market.buy_take;
+				setTimeout(upd_btc, 1500);
+			})
+			.catch(function() {
+				setTimeout(upd_btc, 1500);
+			});
+	};
+
 
 	var upd_trades = function() {
 		var total_profit = 0;
@@ -100,6 +129,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 
 
 	upd_btc();
+	upd_eth();
 	upd_trades();
 
 	// need this functions and assignments after upd_trades is called
