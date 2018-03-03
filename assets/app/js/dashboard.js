@@ -1425,7 +1425,7 @@ var Dashboard = function() {
 				},
 				//serverPaging: true,
 				//serverFiltering: true,
-				//serverSorting: true
+				s //erverSorting: true
 			},
 
 			layout: {
