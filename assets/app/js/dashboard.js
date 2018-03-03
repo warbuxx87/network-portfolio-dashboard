@@ -1435,7 +1435,7 @@ var Dashboard = function() {
 			pagination: true,
 
 			columns: [{
-				field: "UnixAddedTime",
+				field: "AddedTime",
 				title: "Date",
 				width: 140,
 				responsive: {
