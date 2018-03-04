@@ -106,12 +106,17 @@ var DatatableChildRemoteDataDemo = function() {
 				}, {
 					field: 'Notes',
 					title: 'Unique',
-					width: 20,
+					width: 0,
+					responsive: {
+						hidden: 'md'
+					},
 				},
 				{
 					field: 'OrderStatus',
 					title: 'Status',
-					width: 60,
+					responsive: {
+						hidden: 'md'
+					}
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
