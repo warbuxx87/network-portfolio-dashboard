@@ -155,6 +155,7 @@ var DatatableChildRemoteDataBot = function() {
 				}, {
 					field: 'AddedTime',
 					title: 'Date',
+					type: 'date',
 					sortable: 'desc',
 					width: 160,
 				},
