@@ -81,26 +81,24 @@ var DatatableChildRemoteDataDemo = function() {
 				}, {
 					field: 'Amount',
 					title: 'Amount',
-					width: 20,
 				}, {
 					field: 'Pair.PrimaryCurrency',
 					title: 'Currency',
-					width: 20,
 				}, {
 					field: 'Price',
 					title: 'Price',
 				}, {
 					field: 'FeePercentage',
-					title: 'FeePercentage',
+					title: 'Fee %',
 				}, {
 					field: 'FeeCosts',
-					title: 'FeeCosts',
+					title: 'Fee',
 				}, {
 					field: 'Profits',
-					title: 'Profits',
+					title: 'Profit',
 				}, {
 					field: 'Notes',
-					title: 'Notes',
+					title: 'Unique',
 				},
 				{
 					field: 'OrderStatus',
