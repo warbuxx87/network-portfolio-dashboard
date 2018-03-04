@@ -1358,7 +1358,7 @@ var Dashboard = function() {
 
 			layout: {
 				theme: 'default',
-				class: '',
+				class: 'm-datatable--brand',
 				scroll: false,
 				height: 320,
 				footer: false
@@ -1424,7 +1424,7 @@ var Dashboard = function() {
 
 			layout: {
 				theme: 'default',
-				class: '',
+				class: 'm-datatable--brand',
 				scroll: false,
 				height: 320,
 				footer: false
