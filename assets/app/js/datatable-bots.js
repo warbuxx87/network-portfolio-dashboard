@@ -17,9 +17,9 @@ var DatatableChildRemoteDataBot = function() {
 					},
 				},
 				pageSize: 10, // display 10 records per page
-				serverPaging: false,
-				serverFiltering: false,
-				serverSorting: false,
+				//serverPaging: false,
+				//serverFiltering: false,
+				//serverSorting: false,
 			},
 
 			// layout definition
@@ -27,7 +27,7 @@ var DatatableChildRemoteDataBot = function() {
 				theme: 'default',
 				scroll: false,
 				height: null,
-				footer: false,
+				footer: true,
 			},
 
 			// column sorting
