@@ -16,10 +16,10 @@ var DatatableChildRemoteDataBot = function() {
 						method: 'GET',
 					},
 				},
-				pageSize: 10, // display 20 records per page
-				//serverPaging: true,
-				//serverFiltering: false,
-				//serverSorting: true,
+				pageSize: 10, // display 10 records per page
+				serverPaging: true,
+				serverFiltering: false,
+				serverSorting: true,
 			},
 
 			// layout definition
@@ -54,6 +54,7 @@ var DatatableChildRemoteDataBot = function() {
 				}, {
 					field: 'Exchange',
 					title: 'Exchange',
+					sortable: false,
 					width: 75,
 					textAlign: 'center',
 					// callback function support for column rendering
