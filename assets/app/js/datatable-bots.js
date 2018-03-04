@@ -68,7 +68,7 @@ var DatatableChildRemoteDataDemo = function() {
 					width: 20,
 					textAlign: 'center',
 				}, {
-					field: 'FeePercentage',
+					field: 'Exchange',
 					title: '',
 					width: 70,
 					textAlign: 'center',
