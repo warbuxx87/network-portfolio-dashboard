@@ -69,7 +69,7 @@ var DatatableChildRemoteDataDemo = function() {
 						var status = {
 							'Buy': {
 								'title': 'Buy',
-								'class': 'm-badge--success'
+								'class': ' m-badge--success'
 							},
 							'Sell': {
 								'title': 'Sell',
