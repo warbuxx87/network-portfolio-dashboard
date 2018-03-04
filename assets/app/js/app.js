@@ -14,12 +14,12 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 	$scope.balance = []
 
 	var upd_btc = function() {
+		var total_volume = 0;
 		$http.get('https://btc.alkemi.ai/updates')
 			.then(function(response) {
 				$scope.btc = response.data;
 				var buy_market = response.data.markets[0];
 				var sell_market = response.data.markets[0];
-				var total_volume = 0;
 				for (var i = 1; i < response.data.markets.length; i++) {
 					if (response.data.markets[i].buy_take < buy_market.buy_take)
 						buy_market = response.data.markets[i];
@@ -31,7 +31,9 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				}
 				$scope.btc.buy_market = buy_market;
 				$scope.btc.sell_market = sell_market;
-				$scope.btc.total_volume = total_volume;
+				if (total_volume != 0) {
+					$scope.btc.total_volume = total_volume;
+				}
 				$scope.btc.margin = 0;
 				if (buy_market.buy_take < sell_market.sell_take)
 					$scope.btc.margin = sell_market.sell_take - buy_market.buy_take;
@@ -90,6 +92,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 		var total_trades = 0;
 		var usd = 0;
 		var btc = 0;
+		var avg_earn = 0;
 		$http.get('https://api.alkemi.ai')
 			.then(function(response) {
 				$scope.trades = response.data;
@@ -99,8 +102,12 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				for (var i = 0; i < response.data.exchanges.length; i++) {
 					total_trades = total_trades + response.data.exchanges[i].total;
 				}
+				avg_earn = $scope.trades.stats[0].avg_sell - $scope.trades.stats[0].avg_buy
 				btc = $scope.trades.stats[0].btc;
 				usd = $scope.trades.stats[0].usd;
+				if (avg_earn != 0) {
+					$scope.trades.avg_earn = avg_earn;
+				}
 				if (btc != 0) {
 					$scope.balance.btc = btc;
 				}
