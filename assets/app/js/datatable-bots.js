@@ -85,26 +85,33 @@ var DatatableChildRemoteDataDemo = function() {
 					width: 40,
 				}, {
 					field: 'Pair.PrimaryCurrency',
-					title: 'Currency',
+					title: 'Pair',
+					width: 40,
 				}, {
 					field: 'Price',
 					title: 'Price',
+					width: 50,
 				}, {
 					field: 'FeePercentage',
 					title: 'Fee %',
+					width: 40,
 				}, {
 					field: 'FeeCosts',
 					title: 'Fee',
+					width: 40,
 				}, {
 					field: 'Profits',
 					title: 'Profit',
+					width: 40,
 				}, {
 					field: 'Notes',
 					title: 'Unique',
+					width: 20,
 				},
 				{
 					field: 'OrderStatus',
 					title: 'Status',
+					width: 60,
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
@@ -127,6 +134,7 @@ var DatatableChildRemoteDataDemo = function() {
 				}, {
 					field: 'AddedTime',
 					title: 'Date',
+					width: 70,
 				},
 			],
 		});
