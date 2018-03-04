@@ -30542,13 +30542,13 @@ select.m-select2 {
         transition: all 0.3s ease;
         height:50px; }
       .m-header--minimize-on .m-brand .m-brand__logo .m-brand__logo-wrapper img {
-        max-height: 36px;
-        min-height: 36px;
         -webkit-transition: all 0.3s ease 0.3s;
         -moz-transition: all 0.3s ease 0.3s;
         -ms-transition: all 0.3s ease 0.3s;
         -o-transition: all 0.3s ease 0.3s;
-        transition: all 0.3s ease 0.3s; }
+        transition: all 0.3s ease 0.3s;
+        max-height: 36px;
+        min-height: 36px; }
   .m-brand .m-brand__tools {
     line-height: 0;
     vertical-align: middle;
