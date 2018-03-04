@@ -1402,6 +1402,7 @@ var Dashboard = function() {
 			return;
 		}
 
+
 		var datatable = $('#m_datatable_exchanges').mDatatable({
 			data: {
 				type: 'remote',
@@ -1505,7 +1506,7 @@ var Dashboard = function() {
 
 			// datatables
 			datatableLatestOrders1();
-			datatableLatestOrders2();
+			//datatableLatestOrders2();
 
 			// calendar
 			//CalendarInit();
