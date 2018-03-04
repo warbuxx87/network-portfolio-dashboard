@@ -64,7 +64,7 @@ var DatatableChildRemoteDataDemo = function() {
 				}, {
 					field: 'Exchange',
 					title: 'Exchange',
-					width: 70,
+					width: 75,
 					textAlign: 'center',
 					// callback function support for column rendering
 					template: function(row) {
