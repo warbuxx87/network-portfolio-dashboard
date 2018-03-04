@@ -63,7 +63,7 @@ var DatatableChildRemoteDataDemo = function() {
 					},
 				}, {
 					field: 'OrderTypeAsString',
-					title: 'OrderTypeAsString',
+					title: 'Type',
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
@@ -102,7 +102,7 @@ var DatatableChildRemoteDataDemo = function() {
 				},
 				{
 					field: 'OrderStatus',
-					title: 'OrderStatus',
+					title: 'Status',
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
