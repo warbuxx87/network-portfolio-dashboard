@@ -73,7 +73,7 @@ var DatatableChildRemoteDataDemo = function() {
 					width: 70,
 					textAlign: 'center',
 					// callback function support for column rendering
-					template: function(row) {
+					template: function(row.Fee) {
 						var status = {
 							0.25: {
 								'title': 'Bitstamp',
