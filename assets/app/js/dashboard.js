@@ -1403,85 +1403,84 @@ var Dashboard = function() {
 		}
 
 		var datatable = $('#m_datatable_exchanges').mDatatable({
-				data: {
-					type: 'remote',
-					source: {
-						read: {
-							//url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
-							url: 'https://api.alkemi.ai/bots',
-							method: 'GET',
-						}
+			data: {
+				type: 'remote',
+				source: {
+					read: {
+						//url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php'
+						url: 'https://api.alkemi.ai/bots',
+						method: 'GET',
 					}
-					//pageSize: 10,
-					//saveState: {
-					//	cookie: false,
-					//	webstorage: true
-					//},
-					//serverPaging: true,
-					//serverFiltering: true,
-					//serverSorting: true
-				},
+				}
+				//pageSize: 10,
+				//saveState: {
+				//	cookie: false,
+				//	webstorage: true
+				//},
+				//serverPaging: true,
+				//serverFiltering: true,
+				//serverSorting: true
+			},
 
-				layout: {
-					theme: 'default',
-					class: 'm-datatable--brand',
-					scroll: false,
-					height: 320,
-					footer: false
-				},
-				sortable: true,
-				filterable: true,
-				pagination: true,
+			layout: {
+				theme: 'default',
+				class: 'm-datatable--brand',
+				scroll: false,
+				height: 320,
+				footer: false
+			},
+			sortable: true,
+			filterable: true,
+			pagination: true,
 
-				columns: [{
-						field: "AddedTime",
-						title: "Date",
-						width: 140,
-						responsive: {
-							visible: 'lg'
-						}
-					}, {
-						field: "OrderStatus",
-						title: "Status",
-						width: 80
-					}, {
-						field: "OrderType",
-						title: "Type",
-						width: 80,
-						// callback function support for column rendering
-						template: function(row) {
-							var buySell = {
-								1: {
-									'title': 'Buy',
-									'class': 'm-badge--success'
-								},
-								2: {
-									'title': 'Sell',
-									'class': ' m-badge--danger'
-								},
-								3: {
-									'title': 'Canceled',
-									'class': ' m-badge--primary'
-								},
-								4: {
-									'title': 'Success',
-									'class': ' m-badge--brand'
-								},
-								5: {
-									'title': 'Info',
-									'class': ' m-badge--info'
-								},
-								6: {
-									'title': 'Danger',
-									'class': ' m-badge--metal'
-								},
-								7: {
-									'title': 'Warning',
-									'class': ' m-badge--warning'
-								},
-							};
-							return '<span class="m-badge ' + status[row.OrderType].class + ' m-badge--wide">' + status[row.OrderType].title + '</span>';
-						},
+			columns: [{
+					field: "AddedTime",
+					title: "Date",
+					width: 140,
+					responsive: {
+						visible: 'lg'
+					}
+				}, {
+					field: "OrderStatus",
+					title: "Status",
+					width: 80
+				}, {
+					field: "OrderType",
+					title: "Type",
+					width: 80,
+					// callback function support for column rendering
+					template: function(row) {
+						var buySell = {
+							1: {
+								'title': 'Buy',
+								'class': 'm-badge--success'
+							},
+							2: {
+								'title': 'Sell',
+								'class': ' m-badge--danger'
+							},
+							3: {
+								'title': 'Canceled',
+								'class': ' m-badge--primary'
+							},
+							4: {
+								'title': 'Success',
+								'class': ' m-badge--brand'
+							},
+							5: {
+								'title': 'Info',
+								'class': ' m-badge--info'
+							},
+							6: {
+								'title': 'Danger',
+								'class': ' m-badge--metal'
+							},
+							7: {
+								'title': 'Warning',
+								'class': ' m-badge--warning'
+							},
+						};
+						return '<span class="m-badge ' + status[row.OrderType].class + ' m-badge--wide">' + status[row.OrderType].title + '</span>';
 					},
 				},
 				{
@@ -1493,45 +1492,46 @@ var Dashboard = function() {
 					field: "Price",
 					title: "Price",
 					width: 80
-				}]
+				}
+			]
 		});
-}
-
-
-
-return {
-	//== Init demos
-	init: function() {
-		// init charts
-		dailySales();
-		profitShare();
-		salesStats();
-		salesByApps();
-		latestUpdates();
-		trendsStats();
-		trendsStats2();
-		latestTrendsMap();
-		revenueChange();
-		supportTickets();
-		supportTickets2();
-		activitiesChart();
-		tradeChart1();
-		tradeChart2();
-		adWordsStat();
-		financeSummary();
-		quickStats();
-
-		// init daterangepicker
-		daterangepickerInit();
-
-		// datatables
-		datatableLatestOrders1();
-		datatableLatestOrders2();
-
-		// calendar
-		//CalendarInit();
 	}
-};
+
+
+
+	return {
+		//== Init demos
+		init: function() {
+			// init charts
+			dailySales();
+			profitShare();
+			salesStats();
+			salesByApps();
+			latestUpdates();
+			trendsStats();
+			trendsStats2();
+			latestTrendsMap();
+			revenueChange();
+			supportTickets();
+			supportTickets2();
+			activitiesChart();
+			tradeChart1();
+			tradeChart2();
+			adWordsStat();
+			financeSummary();
+			quickStats();
+
+			// init daterangepicker
+			daterangepickerInit();
+
+			// datatables
+			datatableLatestOrders1();
+			datatableLatestOrders2();
+
+			// calendar
+			//CalendarInit();
+		}
+	};
 }();
 
 //== Class initialization on page load
