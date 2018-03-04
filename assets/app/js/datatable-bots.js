@@ -12,13 +12,13 @@ var DatatableChildRemoteDataDemo = function() {
 				type: 'remote',
 				source: {
 					read: {
-						url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/customers.php',
+						url: 'https://api.alkemi.ai/bots',
 					},
 				},
 				pageSize: 10, // display 20 records per page
-				serverPaging: true,
-				serverFiltering: false,
-				serverSorting: true,
+				//serverPaging: true,
+				//serverFiltering: false,
+				//serverSorting: true,
 			},
 
 			// layout definition
@@ -45,125 +45,104 @@ var DatatableChildRemoteDataDemo = function() {
 
 			// columns definition
 			columns: [{
-				field: 'RecordID',
-				title: '',
-				sortable: false,
-				width: 20,
-				textAlign: 'center',
-			}, {
-				field: 'checkbox',
-				title: '',
-				template: '{{RecordID}}',
-				sortable: false,
-				width: 20,
-				textAlign: 'center',
-				selector: {
-					class: 'm-checkbox--solid m-checkbox--brand'
+					field: 'OrderId',
+					title: '',
+					sortable: false,
+					width: 20,
+					textAlign: 'center',
+				}, {
+					field: 'checkbox',
+					title: '',
+					template: '{{OrderId}}',
+					sortable: false,
+					width: 20,
+					textAlign: 'center',
+					selector: {
+						class: 'm-checkbox--solid m-checkbox--brand'
+					},
+				}, {
+					field: 'OrderTypeAsString',
+					title: 'Type',
+					// callback function support for column rendering
+					template: function(row) {
+						var status = {
+							1: {
+								'title': 'Pending',
+								'class': 'm-badge--brand'
+							},
+							2: {
+								'title': 'Delivered',
+								'class': ' m-badge--metal'
+							},
+							3: {
+								'title': 'Canceled',
+								'class': ' m-badge--primary'
+							},
+							4: {
+								'title': 'Buy',
+								'class': ' m-badge--success'
+							},
+							5: {
+								'title': 'Info',
+								'class': ' m-badge--info'
+							},
+							6: {
+								'title': 'Sell',
+								'class': ' m-badge--danger'
+							},
+							7: {
+								'title': 'Warning',
+								'class': ' m-badge--warning'
+							},
+						};
+						return '<span class="m-badge ' + status[row.OrderTypeAsString].class + ' m-badge--wide">' + status[row.OrderTypeAsString].title + '</span>';
+					},
+				}, {
+					field: 'Amount',
+					title: 'Amount',
+				}, {
+					field: 'Pair.PrimaryCurrency',
+					title: 'Currency',
+				}, {
+					field: 'Price',
+					title: 'Price',
+				}, {
+					field: 'FeePercentage',
+					title: 'FeePercentage',
+				}, {
+					field: 'FeeCosts',
+					title: 'FeeCosts',
+				}, {
+					field: 'Profits',
+					title: 'Profits',
+				}, {
+					field: 'Notes',
+					title: 'Notes',
 				},
-			}, {
-				field: 'FirstName',
-				title: 'First Name',
-				sortable: 'asc',
-				// responsive: {hidden: 'md'}
-			}, {
-				field: 'LastName',
-				title: 'Last Name',
-			}, {
-				field: 'Company',
-				title: 'Company',
-			}, {
-				field: 'Email',
-				title: 'Email',
-			}, {
-				field: 'Phone',
-				title: 'Phone',
-			}, {
-				field: 'Status',
-				title: 'Status',
-				// callback function support for column rendering
-				template: function(row) {
-					var status = {
-						1: {
-							'title': 'Pending',
-							'class': 'm-badge--brand'
-						},
-						2: {
-							'title': 'Delivered',
-							'class': ' m-badge--metal'
-						},
-						3: {
-							'title': 'Canceled',
-							'class': ' m-badge--primary'
-						},
-						4: {
-							'title': 'Success',
-							'class': ' m-badge--success'
-						},
-						5: {
-							'title': 'Info',
-							'class': ' m-badge--info'
-						},
-						6: {
-							'title': 'Danger',
-							'class': ' m-badge--danger'
-						},
-						7: {
-							'title': 'Warning',
-							'class': ' m-badge--warning'
-						},
-					};
-					return '<span class="m-badge ' + status[row.Status].class + ' m-badge--wide">' + status[row.Status].title + '</span>';
+				{
+					field: 'OrderStatus',
+					title: 'OrderStatus',
+					// callback function support for column rendering
+					template: function(row) {
+						var status = {
+							1: {
+								'title': 'Online',
+								'state': 'danger'
+							},
+							2: {
+								'title': 'Retail',
+								'state': 'primary'
+							},
+							3: {
+								'title': 'Completed',
+								'state': 'accent'
+							},
+						};
+						return '<span class="m-badge m-badge--' + status[row.OrderStatus].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.OrderStatus].state + '">' +
+							status[row.OrderStatus].title + '</span>';
+					},
 				},
-			}, {
-				field: 'Type',
-				title: 'Type',
-				// callback function support for column rendering
-				template: function(row) {
-					var status = {
-						1: {
-							'title': 'Online',
-							'state': 'danger'
-						},
-						2: {
-							'title': 'Retail',
-							'state': 'primary'
-						},
-						3: {
-							'title': 'Direct',
-							'state': 'accent'
-						},
-					};
-					return '<span class="m-badge m-badge--' + status[row.Type].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.Type].state + '">' +
-						status[row.Type].title + '</span>';
-				},
-			}, {
-				field: 'Actions',
-				width: 110,
-				title: 'Actions',
-				sortable: false,
-				overflow: 'visible',
-				template: function(row, index, datatable) {
-					var dropup = (datatable.getPageSize() - index) <= 4 ? 'dropup' : '';
-					return '\
-						<div class="dropdown ' + dropup + '">\
-							<a href="#" class="btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" data-toggle="dropdown">\
-                                <i class="la la-ellipsis-h"></i>\
-                            </a>\
-						  	<div class="dropdown-menu dropdown-menu-right">\
-						    	<a class="dropdown-item" href="#"><i class="la la-edit"></i> Edit Details</a>\
-						    	<a class="dropdown-item" href="#"><i class="la la-leaf"></i> Update Status</a>\
-						    	<a class="dropdown-item" href="#"><i class="la la-print"></i> Generate Report</a>\
-						  	</div>\
-						</div>\
-						<a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Edit details">\
-							<i class="la la-edit"></i>\
-						</a>\
-						<a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill" title="Delete">\
-							<i class="la la-trash"></i>\
-						</a>\
-					';
-				},
-			}],
+			],
 		});
 
 		function subTableInit(e) {
