@@ -69,14 +69,14 @@ var DatatableChildRemoteDataDemo = function() {
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
-							0.25: {
+							'USD': {
 								'title': 'Bitstamp',
 							},
-							0.1: {
+							'USDT': {
 								'title': 'Binance',
 							},
 						};
-						return '<span>' + status[row.FeePercentage].title + '</span>';
+						return '<span>' + status[row.Pair.SecondaryCurrency].title + '</span>';
 					},
 				}, {
 					field: 'OrderTypeAsString',
