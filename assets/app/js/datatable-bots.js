@@ -73,7 +73,7 @@ var DatatableChildRemoteDataDemo = function() {
 							},
 							'Sell': {
 								'title': 'Sell',
-								'class': ' m-badge--metal'
+								'class': ' m-badge--danger'
 							},
 						};
 						return '<span class="m-badge ' + status[row.OrderTypeAsString].class + ' m-badge--wide">' + status[row.OrderTypeAsString].title + '</span>';
