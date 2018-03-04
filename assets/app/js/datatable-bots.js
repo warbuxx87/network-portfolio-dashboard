@@ -123,10 +123,10 @@ var DatatableChildRemoteDataDemo = function() {
 							status[row.OrderStatus].title + '</span>';
 					},
 				}, {
-					field: 'AddedTime',
+					field: 'UnixLastUpdate',
 					title: 'Date',
 					template: function(row) {
-						return "<span>{{ " + row.AddedTime + " | date:'HH:mm:ss' }}</span>";
+						return '<span> ' + row.AddedTime.toUTCString() + '</span>';
 					},
 				},
 			],
