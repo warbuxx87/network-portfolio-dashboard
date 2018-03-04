@@ -106,7 +106,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				btc = $scope.trades.stats[0].btc;
 				usd = $scope.trades.stats[0].usd;
 				if (avg_earn != 0) {
-					$scope.trades.avg_earn = avg_earn;
+					$scope.trades.stats.avg_earn = avg_earn;
 				}
 				if (btc != 0) {
 					$scope.balance.btc = btc;
