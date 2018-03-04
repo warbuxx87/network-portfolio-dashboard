@@ -1480,7 +1480,7 @@ var Dashboard = function() {
 								'class': ' m-badge--warning'
 							},
 						};
-						return '<span class="m-badge ' + status[row.OrderType].class + ' m-badge--wide">' + status[row.OrderType].title + '</span>';
+						return '<span class="m-badge ' + buySell[row.OrderType].class + ' m-badge--wide">' + buySell[row.OrderType].title + '</span>';
 					},
 				},
 				{
