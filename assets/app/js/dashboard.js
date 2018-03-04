@@ -1450,7 +1450,7 @@ var Dashboard = function() {
 					width: 80,
 					// callback function support for column rendering
 					template: function(row) {
-						var buySell = {
+						var status = {
 							1: {
 								'title': 'Buy',
 								'class': 'm-badge--success'
@@ -1459,28 +1459,8 @@ var Dashboard = function() {
 								'title': 'Sell',
 								'class': ' m-badge--danger'
 							},
-							3: {
-								'title': 'Canceled',
-								'class': ' m-badge--primary'
-							},
-							4: {
-								'title': 'Success',
-								'class': ' m-badge--brand'
-							},
-							5: {
-								'title': 'Info',
-								'class': ' m-badge--info'
-							},
-							6: {
-								'title': 'Danger',
-								'class': ' m-badge--metal'
-							},
-							7: {
-								'title': 'Warning',
-								'class': ' m-badge--warning'
-							},
 						};
-						return '<span class="m-badge ' + buySell[row.OrderType].class + ' m-badge--wide">' + buySell[row.OrderType].title + '</span>';
+						return '<span class="m-badge ' + status[row.OrderType].class + ' m-badge--wide">' + status[row.OrderType].title + '</span>';
 					},
 				},
 				{
