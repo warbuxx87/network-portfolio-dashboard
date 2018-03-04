@@ -123,9 +123,8 @@ var DatatableChildRemoteDataDemo = function() {
 								status[row.OrderStatus].title + '</span>';
 						},
 					}, {
-						field: 'UnixLastUpdate',
+						field: 'AddedTime',
 						title: 'Date',
-						render: $.fn.dataTable.render.moment('X', 'Do MMM YY'),
 					},
 				},
 			],
