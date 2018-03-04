@@ -114,8 +114,10 @@ var DatatableChildRemoteDataBot = function() {
 				}, {
 					field: 'FeePercentage',
 					title: 'Fee %',
-					width: 40,
 					textAlign: 'center',
+					responsive: {
+						hidden: 'md',
+					},
 				}, {
 					field: 'FeeCosts',
 					title: 'Fee',
