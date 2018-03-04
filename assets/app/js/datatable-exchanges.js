@@ -135,7 +135,7 @@ var DatatableChildRemoteDataExchange = function() {
 					},
 				},
 				{
-					field: 'OrderStatus',
+					field: 'OrderStatusAsString',
 					title: 'Status',
 					responsive: {
 						hidden: 'md'
@@ -156,8 +156,8 @@ var DatatableChildRemoteDataExchange = function() {
 								'state': 'accent'
 							},
 						};
-						return '<span class="m-badge m-badge--' + status[row.OrderStatus].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.OrderStatus].state + '">' +
-							status[row.OrderStatus].title + '</span>';
+						return '<span class="m-badge m-badge--' + status[row.OrderStatusAsString].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.OrderStatusAsString].state + '">' +
+							status[row.OrderStatusAsString].title + '</span>';
 					},
 				}, {
 					field: 'AddedTime',
