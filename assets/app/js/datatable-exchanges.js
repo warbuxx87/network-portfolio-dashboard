@@ -116,6 +116,9 @@ var DatatableChildRemoteDataExchange = function() {
 					title: 'Fee %',
 					width: 40,
 					textAlign: 'center',
+					responsive: {
+						hidden: 'md',
+					},
 				}, {
 					field: 'FeeCosts',
 					title: 'Fee',
@@ -307,7 +310,7 @@ var DatatableChildRemoteDataExchange = function() {
 	return {
 		//== Public functions
 		init: function() {
-			// init dmeo
+			// init exchange
 			exchange();
 		},
 	};
