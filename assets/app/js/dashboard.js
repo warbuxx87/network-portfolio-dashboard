@@ -1505,7 +1505,7 @@ var Dashboard = function() {
 			daterangepickerInit();
 
 			// datatables
-			datatableLatestOrders1();
+			//datatableLatestOrders1();
 			//datatableLatestOrders2();
 
 			// calendar

@@ -1,12 +1,12 @@
 //== Class definition
 
-var DatatableChildRemoteDataDemo = function() {
+var DatatableChildRemoteDataBot = function() {
 	//== Private functions
 
 	// demo initializer
-	var demo = function() {
+	var bot = function() {
 
-		var datatable = $('#m_datatable_exchanges').mDatatable({
+		var datatable = $('#m_datatable_bot').mDatatable({
 			// datasource definition
 			data: {
 				type: 'remote',
@@ -307,11 +307,11 @@ var DatatableChildRemoteDataDemo = function() {
 		//== Public functions
 		init: function() {
 			// init dmeo
-			demo();
+			bot();
 		},
 	};
 }();
 
 jQuery(document).ready(function() {
-	DatatableChildRemoteDataDemo.init();
+	DatatableChildRemoteDataBot.init();
 });
