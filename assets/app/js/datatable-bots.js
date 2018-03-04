@@ -75,10 +75,10 @@ var DatatableChildRemoteDataDemo = function() {
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
-							.25: {
+							0.25: {
 								'title': 'Bitstamp',
 							},
-							.1: {
+							0.1: {
 								'title': 'Binance',
 							},
 						};
