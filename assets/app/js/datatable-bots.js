@@ -108,7 +108,7 @@ var DatatableChildRemoteDataDemo = function() {
 					title: 'Unique',
 					width: 0,
 					responsive: {
-						hidden: 'md'
+						hidden: 'md',
 					},
 				},
 				{
@@ -116,7 +116,7 @@ var DatatableChildRemoteDataDemo = function() {
 					title: 'Status',
 					responsive: {
 						hidden: 'md'
-					}
+					},
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
