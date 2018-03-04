@@ -62,14 +62,8 @@ var DatatableChildRemoteDataDemo = function() {
 						class: 'm-checkbox--solid m-checkbox--brand'
 					},
 				}, {
-					field: 'Fee',
-					title: '',
-					sortable: false,
-					width: 20,
-					textAlign: 'center',
-				}, {
 					field: 'Exchange',
-					title: '',
+					title: 'Exchange',
 					width: 70,
 					textAlign: 'center',
 					// callback function support for column rendering
