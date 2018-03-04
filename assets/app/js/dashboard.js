@@ -1434,8 +1434,8 @@ var Dashboard = function() {
 			pagination: true,
 
 			columns: [{
-					field: "AddedTime",
-					title: "Date",
+					field: 'AddedTime',
+					title: 'Date',
 					width: 140,
 					responsive: {
 						visible: 'lg'
@@ -1446,7 +1446,7 @@ var Dashboard = function() {
 					width: 80
 				}, {
 					field: 'OrderType',
-					title: 'Type',
+					title: 'OrderType',
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
@@ -1463,13 +1463,13 @@ var Dashboard = function() {
 					},
 				},
 				{
-					field: "Amount",
-					title: "Amount",
+					field: 'Amount',
+					title: 'Amount',
 					width: 80
 				},
 				{
-					field: "Price",
-					title: "Price",
+					field: 'Price',
+					title: 'Price',
 					width: 80
 				}
 			]
