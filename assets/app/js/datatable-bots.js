@@ -82,7 +82,7 @@ var DatatableChildRemoteDataDemo = function() {
 								'title': 'Binance',
 							},
 						};
-						return '<span>' + status[row.Fee].title + '</span>';
+						return '<span>' + status[row.Origin].title + '</span>';
 					},
 				}, {
 					field: 'OrderTypeAsString',
