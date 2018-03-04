@@ -30539,9 +30539,11 @@ select.m-select2 {
         -moz-transition: all 0.3s ease;
         -ms-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
-        transition: all 0.3s ease; }
+        transition: all 0.3s ease;
+        height:50px; }
       .m-header--minimize-on .m-brand .m-brand__logo .m-brand__logo-wrapper img {
         max-height: 36px;
+        height: 36px;
         -webkit-transition: all 0.3s ease 0.3s;
         -moz-transition: all 0.3s ease 0.3s;
         -ms-transition: all 0.3s ease 0.3s;
