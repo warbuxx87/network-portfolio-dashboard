@@ -63,37 +63,17 @@ var DatatableChildRemoteDataDemo = function() {
 					},
 				}, {
 					field: 'OrderTypeAsString',
-					title: 'Type',
+					title: 'OrderTypeAsString',
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
-							1: {
-								'title': 'Pending',
+							'Buy': {
+								'title': 'Buy',
 								'class': 'm-badge--brand'
 							},
-							2: {
-								'title': 'Delivered',
-								'class': ' m-badge--metal'
-							},
-							3: {
-								'title': 'Canceled',
-								'class': ' m-badge--primary'
-							},
-							4: {
-								'title': 'Buy',
-								'class': ' m-badge--success'
-							},
-							5: {
-								'title': 'Info',
-								'class': ' m-badge--info'
-							},
-							6: {
+							'Sell': {
 								'title': 'Sell',
-								'class': ' m-badge--danger'
-							},
-							7: {
-								'title': 'Warning',
-								'class': ' m-badge--warning'
+								'class': ' m-badge--metal'
 							},
 						};
 						return '<span class="m-badge ' + status[row.OrderTypeAsString].class + ' m-badge--wide">' + status[row.OrderTypeAsString].title + '</span>';
