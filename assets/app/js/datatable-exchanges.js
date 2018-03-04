@@ -12,7 +12,7 @@ var DatatableChildRemoteDataExchange = function() {
 				type: 'remote',
 				source: {
 					read: {
-						url: 'https://api.alkemi.ai/exchange/bitstamp',
+						url: 'https://api.alkemi.ai/exchanges/bitstamp',
 						method: 'GET',
 					},
 				},
