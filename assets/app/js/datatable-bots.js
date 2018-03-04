@@ -62,6 +62,12 @@ var DatatableChildRemoteDataDemo = function() {
 						class: 'm-checkbox--solid m-checkbox--brand'
 					},
 				}, {
+					field: 'Fee',
+					title: '',
+					sortable: false,
+					width: 20,
+					textAlign: 'center',
+				}, {
 					field: 'Origin',
 					title: '',
 					width: 70,
