@@ -125,6 +125,9 @@ var DatatableChildRemoteDataDemo = function() {
 				}, {
 					field: 'AddedTime',
 					title: 'Date',
+					template: function(row) {
+						return '<span>{{ ' + row.AddedTime + ' | date:"HH:mm:ss" }}</span>';
+					},
 				},
 			],
 		});
