@@ -68,12 +68,12 @@ var DatatableChildRemoteDataDemo = function() {
 					width: 20,
 					textAlign: 'center',
 				}, {
-					field: 'Origin',
+					field: 'Fee',
 					title: '',
 					width: 70,
 					textAlign: 'center',
 					// callback function support for column rendering
-					template: function(row.Fee) {
+					template: function(row) {
 						var status = {
 							0.25: {
 								'title': 'Bitstamp',
@@ -82,7 +82,7 @@ var DatatableChildRemoteDataDemo = function() {
 								'title': 'Binance',
 							},
 						};
-						return '<span>' + status[row.Origin].title + '</span>';
+						return '<span>' + status[row.Fee].title + '</span>';
 					},
 				}, {
 					field: 'OrderTypeAsString',
