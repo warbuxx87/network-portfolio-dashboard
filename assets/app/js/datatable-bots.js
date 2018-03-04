@@ -64,6 +64,7 @@ var DatatableChildRemoteDataDemo = function() {
 				}, {
 					field: 'OrderTypeAsString',
 					title: 'Type',
+					width: 40,
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
@@ -80,7 +81,8 @@ var DatatableChildRemoteDataDemo = function() {
 					},
 				}, {
 					field: 'Amount',
-					title: 'Amount',
+					title: 'Size',
+					width: 40,
 				}, {
 					field: 'Pair.PrimaryCurrency',
 					title: 'Currency',
