@@ -126,7 +126,7 @@ var DatatableChildRemoteDataDemo = function() {
 					field: 'UnixLastUpdate',
 					title: 'Date',
 					template: function(row) {
-						return '<span> ' + row.UnixLastUpdate.toUTCString() + '</span>';
+						return '<span> ' + toUTCString(row.UnixLastUpdate) + '</span>';
 					},
 				},
 			],
