@@ -1441,13 +1441,12 @@ var Dashboard = function() {
 						visible: 'lg'
 					}
 				}, {
-					field: "OrderStatus",
-					title: "Status",
+					field: 'OrderStatus',
+					title: 'Status',
 					width: 80
 				}, {
-					field: "OrderType",
-					title: "Type",
-					width: 80,
+					field: 'OrderType',
+					title: 'Type',
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
