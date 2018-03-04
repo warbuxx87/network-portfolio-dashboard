@@ -46,6 +46,12 @@ var DatatableChildRemoteDataExchange = function() {
 
 			// columns definition
 			columns: [{
+					field: 'OrderId',
+					title: '',
+					sortable: false,
+					width: 20,
+					textAlign: 'center',
+				}, {
 					field: 'Exchange',
 					title: 'Exchange',
 					width: 75,
