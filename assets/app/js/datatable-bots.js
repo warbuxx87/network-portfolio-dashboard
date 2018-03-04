@@ -13,6 +13,7 @@ var DatatableChildRemoteDataDemo = function() {
 				source: {
 					read: {
 						url: 'https://api.alkemi.ai/bots',
+						method: 'GET',
 					},
 				},
 				pageSize: 10, // display 20 records per page
