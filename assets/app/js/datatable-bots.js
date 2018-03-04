@@ -106,15 +106,15 @@ var DatatableChildRemoteDataDemo = function() {
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
-							1: {
+							'Timeout': {
 								'title': 'Online',
 								'state': 'danger'
 							},
-							2: {
+							'Canceled': {
 								'title': 'Retail',
 								'state': 'primary'
 							},
-							3: {
+							'Completed': {
 								'title': 'Completed',
 								'state': 'accent'
 							},
