@@ -69,11 +69,11 @@ var DatatableChildRemoteDataDemo = function() {
 						var status = {
 							'Buy': {
 								'title': 'Buy',
-								'class': 'm-badge--brand'
+								'class': 'm-badge--success'
 							},
 							'Sell': {
 								'title': 'Sell',
-								'class': ' m-badge--danger'
+								'class': ' m-badge--brand'
 							},
 						};
 						return '<span class="m-badge ' + status[row.OrderTypeAsString].class + ' m-badge--wide">' + status[row.OrderTypeAsString].title + '</span>';
@@ -107,12 +107,12 @@ var DatatableChildRemoteDataDemo = function() {
 					template: function(row) {
 						var status = {
 							'Timeout': {
-								'title': 'Online',
-								'state': 'danger'
+								'title': 'Timeout',
+								'state': 'warning'
 							},
 							'Canceled': {
-								'title': 'Retail',
-								'state': 'primary'
+								'title': 'Canceled',
+								'state': 'danger'
 							},
 							'Completed': {
 								'title': 'Completed',
@@ -122,6 +122,9 @@ var DatatableChildRemoteDataDemo = function() {
 						return '<span class="m-badge m-badge--' + status[row.OrderStatus].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.OrderStatus].state + '">' +
 							status[row.OrderStatus].title + '</span>';
 					},
+				}, {
+					field: 'AddedTime',
+					title: 'Date',
 				},
 			],
 		});
