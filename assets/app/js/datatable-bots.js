@@ -46,22 +46,6 @@ var DatatableChildRemoteDataBot = function() {
 
 			// columns definition
 			columns: [{
-					field: 'OrderId',
-					title: '',
-					sortable: false,
-					width: 20,
-					textAlign: 'center',
-				}, {
-					field: 'checkbox',
-					title: '',
-					template: '{{OrderId}}',
-					sortable: false,
-					width: 20,
-					textAlign: 'center',
-					selector: {
-						class: 'm-checkbox--solid m-checkbox--brand'
-					},
-				}, {
 					field: 'Exchange',
 					title: 'Exchange',
 					width: 75,
