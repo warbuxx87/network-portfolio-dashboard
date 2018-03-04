@@ -90,7 +90,7 @@ var DatatableChildRemoteDataDemo = function() {
 				}, {
 					field: 'Price',
 					title: 'Price',
-					width: 50,
+					width: 60,
 				}, {
 					field: 'FeePercentage',
 					title: 'Fee %',
@@ -98,7 +98,7 @@ var DatatableChildRemoteDataDemo = function() {
 				}, {
 					field: 'FeeCosts',
 					title: 'Fee',
-					width: 40,
+					width: 50,
 				}, {
 					field: 'Profits',
 					title: 'Profit',
@@ -134,7 +134,7 @@ var DatatableChildRemoteDataDemo = function() {
 				}, {
 					field: 'AddedTime',
 					title: 'Date',
-					width: 70,
+					width: 120,
 				},
 			],
 		});
