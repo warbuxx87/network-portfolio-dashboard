@@ -62,9 +62,27 @@ var DatatableChildRemoteDataDemo = function() {
 						class: 'm-checkbox--solid m-checkbox--brand'
 					},
 				}, {
+					field: 'Origin',
+					title: '',
+					width: 70,
+					textAlign: 'center',
+					// callback function support for column rendering
+					template: function(row) {
+						var status = {
+							.25: {
+								'title': 'Bitstamp',
+							},
+							.1: {
+								'title': 'Binance',
+							},
+						};
+						return '<span>' + status[row.Fee].title + '</span>';
+					},
+				}, {
 					field: 'OrderTypeAsString',
 					title: 'Type',
 					width: 40,
+					textAlign: 'center',
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
@@ -83,6 +101,7 @@ var DatatableChildRemoteDataDemo = function() {
 					field: 'Amount',
 					title: 'Size',
 					width: 40,
+					textAlign: 'center',
 				}, {
 					field: 'Pair.PrimaryCurrency',
 					title: 'Pair',
@@ -91,18 +110,22 @@ var DatatableChildRemoteDataDemo = function() {
 					field: 'Price',
 					title: 'Price',
 					width: 60,
+					textAlign: 'center',
 				}, {
 					field: 'FeePercentage',
 					title: 'Fee %',
 					width: 40,
+					textAlign: 'center',
 				}, {
 					field: 'FeeCosts',
 					title: 'Fee',
 					width: 50,
+					textAlign: 'center',
 				}, {
 					field: 'Profits',
 					title: 'Profit',
 					width: 40,
+					textAlign: 'center',
 				}, {
 					field: 'Notes',
 					title: 'Unique',
@@ -139,7 +162,7 @@ var DatatableChildRemoteDataDemo = function() {
 				}, {
 					field: 'AddedTime',
 					title: 'Date',
-					width: 120,
+					width: 160,
 				},
 			],
 		});
