@@ -162,6 +162,7 @@ var DatatableChildRemoteDataDemo = function() {
 				}, {
 					field: 'AddedTime',
 					title: 'Date',
+					sortable: 'asc',
 					width: 160,
 				},
 			],
