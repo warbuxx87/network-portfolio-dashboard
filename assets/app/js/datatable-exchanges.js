@@ -7,27 +7,27 @@ var DatatableChildRemoteDataExchange = function() {
 	var exchange = function() {
 
 		var datatable = $('#m_datatable_exchange').mDatatable({
-			// datasource definition
-			data: {
-				type: 'remote',
-				source: {
-					read: {
-						url: 'https://bots.alkemi.ai/SpotOrders',
-						method: 'GET',
-						// custom headers
-						headers: {
-							'x-my-custom-header': 'some value',
-							'x-test-header': 'the value'
-						},
-						params: {
-							// pageination
-							_page: 1,
-							// custom query params
-							query: {
-								generalSearch: '',
-								EmployeeID: 1,
-								someParam: 'someValue',
-								token: 'token-value'
+				// datasource definition
+				data: {
+					type: 'remote',
+					source: {
+						read: {
+							url: 'https://bots.alkemi.ai/SpotOrders',
+							method: 'GET',
+							// custom headers
+							headers: {
+								'x-my-custom-header': 'some value',
+								'x-test-header': 'the value'
+							},
+							params: {
+								// pageination
+								_page: 1,
+								// custom query params
+								//query: {
+								//	generalSearch: '',
+								//	EmployeeID: 1,
+								//	someParam: 'someValue',
+								//  token: 'token-value'
 							}
 						},
 					},
@@ -177,148 +177,148 @@ var DatatableChildRemoteDataExchange = function() {
 			],
 		});
 
-		function subTableInit(e) {
-			$('<div/>').attr('id', 'child_data_ajax_' + e.data.RecordID).appendTo(e.detailCell).mDatatable({
-				data: {
-					type: 'remote',
-					source: {
-						read: {
-							url: 'inc/api/datatables/demos/orders.php',
-							headers: {
-								'x-my-custom-header': 'some value',
-								'x-test-header': 'the value'
-							},
-							params: {
-								// custom query params
-								query: {
-									generalSearch: '',
-									CustomerID: e.data.RecordID,
-								},
+	function subTableInit(e) {
+		$('<div/>').attr('id', 'child_data_ajax_' + e.data.RecordID).appendTo(e.detailCell).mDatatable({
+			data: {
+				type: 'remote',
+				source: {
+					read: {
+						url: 'inc/api/datatables/demos/orders.php',
+						headers: {
+							'x-my-custom-header': 'some value',
+							'x-test-header': 'the value'
+						},
+						params: {
+							// custom query params
+							query: {
+								generalSearch: '',
+								CustomerID: e.data.RecordID,
 							},
 						},
 					},
-					pageSize: 10,
-					serverPaging: true,
-					serverFiltering: false,
-					serverSorting: true,
 				},
+				pageSize: 10,
+				serverPaging: true,
+				serverFiltering: false,
+				serverSorting: true,
+			},
 
-				// layout definition
-				layout: {
+			// layout definition
+			layout: {
+				theme: 'default',
+				scroll: true,
+				height: 300,
+				footer: false,
+
+				// enable/disable datatable spinner.
+				spinner: {
+					type: 1,
 					theme: 'default',
-					scroll: true,
-					height: 300,
-					footer: false,
-
-					// enable/disable datatable spinner.
-					spinner: {
-						type: 1,
-						theme: 'default',
-					},
 				},
+			},
 
-				sortable: true,
+			sortable: true,
 
-				// columns definition
-				columns: [{
-					field: 'RecordID',
-					title: '#',
-					sortable: false,
-					width: 20,
-					responsive: {
-						hide: 'xl'
-					},
-				}, {
-					field: 'OrderID',
-					title: 'Order ID',
-					template: function(row) {
-						return '<span>' + row.OrderID + ' - ' + row.ShipCountry + '</span>';
-					},
-				}, {
-					field: 'ShipCountry',
-					title: 'Country',
-					width: 100,
-				}, {
-					field: 'ShipAddress',
-					title: 'Ship Address',
-				}, {
-					field: 'ShipName',
-					title: 'Ship Name',
-				}, {
-					field: 'TotalPayment',
-					title: 'Payment',
-					type: 'number',
-				}, {
-					field: 'Status',
-					title: 'Status',
-					// callback function support for column rendering
-					template: function(row) {
-						var status = {
-							1: {
-								'title': 'Pending',
-								'class': 'm-badge--brand'
-							},
-							2: {
-								'title': 'Delivered',
-								'class': ' m-badge--metal'
-							},
-							3: {
-								'title': 'Canceled',
-								'class': ' m-badge--primary'
-							},
-							4: {
-								'title': 'Success',
-								'class': ' m-badge--success'
-							},
-							5: {
-								'title': 'Info',
-								'class': ' m-badge--info'
-							},
-							6: {
-								'title': 'Danger',
-								'class': ' m-badge--danger'
-							},
-							7: {
-								'title': 'Warning',
-								'class': ' m-badge--warning'
-							},
-						};
-						return '<span class="m-badge ' + status[row.Status].class + ' m-badge--wide">' + status[row.Status].title + '</span>';
-					},
-				}, {
-					field: 'Type',
-					title: 'Type',
-					// callback function support for column rendering
-					template: function(row) {
-						var status = {
-							1: {
-								'title': 'Online',
-								'state': 'danger'
-							},
-							2: {
-								'title': 'Retail',
-								'state': 'primary'
-							},
-							3: {
-								'title': 'Direct',
-								'state': 'accent'
-							},
-						};
-						return '<span class="m-badge m-badge--' + status[row.Type].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.Type].state + '">' +
-							status[row.Type].title + '</span>';
-					},
-				}, ],
-			});
-		}
-	};
+			// columns definition
+			columns: [{
+				field: 'RecordID',
+				title: '#',
+				sortable: false,
+				width: 20,
+				responsive: {
+					hide: 'xl'
+				},
+			}, {
+				field: 'OrderID',
+				title: 'Order ID',
+				template: function(row) {
+					return '<span>' + row.OrderID + ' - ' + row.ShipCountry + '</span>';
+				},
+			}, {
+				field: 'ShipCountry',
+				title: 'Country',
+				width: 100,
+			}, {
+				field: 'ShipAddress',
+				title: 'Ship Address',
+			}, {
+				field: 'ShipName',
+				title: 'Ship Name',
+			}, {
+				field: 'TotalPayment',
+				title: 'Payment',
+				type: 'number',
+			}, {
+				field: 'Status',
+				title: 'Status',
+				// callback function support for column rendering
+				template: function(row) {
+					var status = {
+						1: {
+							'title': 'Pending',
+							'class': 'm-badge--brand'
+						},
+						2: {
+							'title': 'Delivered',
+							'class': ' m-badge--metal'
+						},
+						3: {
+							'title': 'Canceled',
+							'class': ' m-badge--primary'
+						},
+						4: {
+							'title': 'Success',
+							'class': ' m-badge--success'
+						},
+						5: {
+							'title': 'Info',
+							'class': ' m-badge--info'
+						},
+						6: {
+							'title': 'Danger',
+							'class': ' m-badge--danger'
+						},
+						7: {
+							'title': 'Warning',
+							'class': ' m-badge--warning'
+						},
+					};
+					return '<span class="m-badge ' + status[row.Status].class + ' m-badge--wide">' + status[row.Status].title + '</span>';
+				},
+			}, {
+				field: 'Type',
+				title: 'Type',
+				// callback function support for column rendering
+				template: function(row) {
+					var status = {
+						1: {
+							'title': 'Online',
+							'state': 'danger'
+						},
+						2: {
+							'title': 'Retail',
+							'state': 'primary'
+						},
+						3: {
+							'title': 'Direct',
+							'state': 'accent'
+						},
+					};
+					return '<span class="m-badge m-badge--' + status[row.Type].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.Type].state + '">' +
+						status[row.Type].title + '</span>';
+				},
+			}, ],
+		});
+	}
+};
 
-	return {
-		//== Public functions
-		init: function() {
-			// init exchange
-			exchange();
-		},
-	};
+return {
+	//== Public functions
+	init: function() {
+		// init exchange
+		exchange();
+	},
+};
 }();
 
 jQuery(document).ready(function() {
