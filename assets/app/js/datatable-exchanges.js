@@ -32,10 +32,10 @@ var DatatableChildRemoteDataExchange = function() {
 						},
 					},
 				},
-				pageSize: 10, // display 20 records per page
-				serverPaging: true,
-				serverFiltering: false,
-				serverSorting: true,
+				//pageSize: 10, // display 20 records per page
+				//serverPaging: true,
+				//serverFiltering: false,
+				//serverSorting: true,
 			},
 
 			// layout definition
