@@ -154,11 +154,11 @@ var DatatableChildRemoteDataExchange = function() {
 					template: function(row) {
 						var status = {
 							'Timeout': {
-								'title': 'CancelledByTimeout',
+								'title': 'Timeout',
 								'state': 'warning'
 							},
-							'Canceled': {
-								'title': 'CancelledByUser',
+							'CancelledByUser': {
+								'title': 'Cancel',
 								'state': 'danger'
 							},
 							'Completed': {
