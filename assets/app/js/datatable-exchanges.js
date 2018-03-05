@@ -21,7 +21,9 @@ var DatatableChildRemoteDataExchange = function() {
 						//},
 						params: {
 							//pageination
-							_limit: 10,
+							_limit: 20,
+							_sort: 'UnixLastUpdate',
+							_order: 'desc',
 							// custom query params
 							//query: {
 							//	generalSearch: '',
