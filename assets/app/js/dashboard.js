@@ -92,7 +92,7 @@ var Dashboard = function() {
 		return new Chart(src, config);
 	}
 
-	//== Daily Sales chart.
+	//== Successful TradesChart.
 	//** Based on Chartjs plugin - http://www.chartjs.org/
 	var dailySales = function() {
 		var chartContainer = $('#m_chart_daily_sales');
@@ -102,18 +102,18 @@ var Dashboard = function() {
 		}
 
 		var chartData = {
-			labels: ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5", "Label 6", "Label 7", "Label 8", "Label 9", "Label 10", "Label 11", "Label 12", "Label 13", "Label 14", "Label 15", "Label 16"],
+			labels: ["Bot 1", "Bot 2", "Bot 3", "Bot 4", "Bot 5", "Bot 6", "Bot 7", "Bot 8", "Bot 9", "Bot 10", "Bot 11", "Bot 12", "Bot 13", "Bot 14", "Bot 15", "Bot 16"],
 			datasets: [{
 				//label: 'Dataset 1',
 				backgroundColor: '#568ca7',
 				data: [
-					15, 20, 25, 30, 25, 20, 15, 20, 25, 30, 25, 20, 15, 10, 15, 20
+					20463.31, 2752.74, 4754.34, 3836.07, 13011.62, 15919.78, 11482.91, 6139.91, 50658.60, 20621.41, 20621.41, 22083.73, 35737.51, 8101.13, 6336.42, 2579.69
 				]
 			}, {
 				//label: 'Dataset 2',
 				backgroundColor: '#f3f3fb',
 				data: [
-					15, 20, 25, 30, 25, 20, 15, 20, 25, 30, 25, 20, 15, 10, 15, 20
+					742, 1523, 189, 138, 639, 604, 427, 221, 1859, 1997, 1073, 1414, 297, 319, 250, 440
 				]
 			}]
 		};
