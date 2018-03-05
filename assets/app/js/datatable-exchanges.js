@@ -33,7 +33,7 @@ var DatatableChildRemoteDataExchange = function() {
 					},
 				},
 				pageSize: 10, // display 20 records per page
-				serverPaging: true,
+				//serverPaging: true,
 				//serverFiltering: false,
 				//serverSorting: true,
 			},
