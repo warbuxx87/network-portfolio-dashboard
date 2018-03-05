@@ -12,14 +12,14 @@ var DatatableChildRemoteDataExchange = function() {
 				type: 'remote',
 				source: {
 					read: {
-						url: 'https://api.alkemi.ai/exchanges/bitstamp',
+						url: 'https://bots.alkemi.ai/',
 						method: 'GET',
 					},
 				},
 				pageSize: 10, // display 20 records per page
-				//serverPaging: true,
-				//serverFiltering: false,
-				//serverSorting: true,
+				serverPaging: true,
+				serverFiltering: false,
+				serverSorting: true,
 			},
 
 			// layout definition
@@ -32,7 +32,6 @@ var DatatableChildRemoteDataExchange = function() {
 
 			// column sorting
 			sortable: true,
-
 			pagination: true,
 
 			detail: {
