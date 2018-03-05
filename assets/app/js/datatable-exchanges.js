@@ -76,14 +76,14 @@ var DatatableChildRemoteDataExchange = function() {
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
-							'USD': {
-								'title': 'Bitstamp',
+							1: {
+								'title': 'Bitfinex',
 							},
-							'USDT': {
+							16: {
 								'title': 'Binance',
 							},
 						};
-						return '<span>' + status[row.Pair.SecondaryCurrency].title + '</span>';
+						return '<span>' + status[row.Platform].title + '</span>';
 					},
 				}, {
 					field: 'OrderTypeAsString',
