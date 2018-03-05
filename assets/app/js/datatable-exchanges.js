@@ -127,16 +127,6 @@ var DatatableChildRemoteDataExchange = function() {
 						hidden: 'md',
 					},
 				}, {
-					field: 'FeeCosts',
-					title: 'Fee',
-					width: 50,
-					textAlign: 'center',
-				}, {
-					field: 'Profits',
-					title: 'Profit',
-					width: 40,
-					textAlign: 'center',
-				}, {
 					field: 'Notes',
 					title: 'Unique',
 					width: 0,
@@ -147,9 +137,6 @@ var DatatableChildRemoteDataExchange = function() {
 				{
 					field: 'OrderStatusAsString',
 					title: 'Status',
-					responsive: {
-						hidden: 'md'
-					},
 					// callback function support for column rendering
 					template: function(row) {
 						var status = {
