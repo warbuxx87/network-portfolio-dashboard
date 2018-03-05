@@ -14,6 +14,22 @@ var DatatableChildRemoteDataExchange = function() {
 					read: {
 						url: 'https://bots.alkemi.ai/SpotOrders',
 						method: 'GET',
+						// custom headers
+						headers: {
+							'x-my-custom-header': 'some value',
+							'x-test-header': 'the value'
+						},
+						params: {
+							// pageination
+							_page: 1,
+							// custom query params
+							query: {
+								generalSearch: '',
+								EmployeeID: 1,
+								someParam: 'someValue',
+								token: 'token-value'
+							}
+						},
 					},
 				},
 				pageSize: 10, // display 20 records per page
