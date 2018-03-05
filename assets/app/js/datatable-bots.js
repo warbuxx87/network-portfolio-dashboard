@@ -12,14 +12,14 @@ var DatatableChildRemoteDataBot = function() {
 				type: 'remote',
 				source: {
 					read: {
-						url: 'https://api.alkemi.ai/bots',
+						url: 'https://bots.alkemi.ai/',
 						method: 'GET',
 					},
 				},
 				pageSize: 10, // display 10 records per page
-				//serverPaging: false,
-				//serverFiltering: false,
-				//serverSorting: false,
+				serverPaging: True,
+				serverFiltering: True,
+				serverSorting: True,
 			},
 
 			// layout definition
