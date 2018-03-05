@@ -21,7 +21,7 @@ var DatatableChildRemoteDataExchange = function() {
 						//},
 						params: {
 							//pageination
-							_limit: 20,
+							_limit: 100,
 							_sort: 'UnixLastUpdate',
 							_order: 'desc',
 							// custom query params
@@ -172,7 +172,7 @@ var DatatableChildRemoteDataExchange = function() {
 				}, {
 					field: 'AddedTime',
 					title: 'Date',
-					type: 'date',
+					type: 'TimeStamp',
 					sortable: 'desc',
 					width: 160,
 				},
