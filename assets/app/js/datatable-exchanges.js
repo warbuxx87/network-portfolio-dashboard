@@ -12,7 +12,7 @@ var DatatableChildRemoteDataExchange = function() {
 				type: 'remote',
 				source: {
 					read: {
-						url: 'https://bots.alkemi.ai/',
+						url: 'https://bots.alkemi.ai/SpotOrders',
 						method: 'GET',
 					},
 				},
