@@ -108,7 +108,7 @@ var DatatableChildRemoteDataExchange = function() {
 		});
 
 		function subTableInit(e) {
-			$('<div/>').attr('id', 'child_data_ajax_' + e.data.id).appendTo(e.detailCell).mDatatable({
+			$('<div/>').attr('id', 'child_data_ajax_' + e.data.name).appendTo(e.detailCell).mDatatable({
 				data: {
 					type: 'remote',
 					source: {
