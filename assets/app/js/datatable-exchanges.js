@@ -70,24 +70,24 @@ var DatatableChildRemoteDataExchange = function() {
 					return '<span class="m-badge ' + status[row.order].class + ' m-badge--wide">' + status[row.order].title + '</span>';
 				},
 			}, {
-				field: 'exchanges.amount',
+				field: 'amount',
 				title: 'Size',
 				width: 40,
 				textAlign: 'center',
 			}, {
-				field: 'exchanges.pair',
+				field: 'pair',
 				title: 'Pair',
 				width: 40,
 				template: function(row) {
 					return 'BTC';
 				}
 			}, {
-				field: 'exchanges.price',
+				field: 'price',
 				title: 'Price',
 				width: 60,
 				textAlign: 'center',
 			}, {
-				field: 'exchanges.updated',
+				field: 'updated',
 				title: 'Date',
 				sortable: 'desc',
 				width: 160,
