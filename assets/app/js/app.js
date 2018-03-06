@@ -75,10 +75,11 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 
 
 	var upd_ltc = function() {
-		$http.get('https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD')
+		$http.get('https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD,CAD,EUR,BTC,ETH')
 			.then(function(response) {
-				var ltc = response.data.USD;
-				$scope.ltc.idx = ltc;
+				var ltc = response.data;
+				$scope.ltc.idx = ltc.usd;
+				$scope.ltc = ltc;
 				setTimeout(upd_ltc, 1500);
 			})
 			.catch(function() {
