@@ -206,6 +206,17 @@
 															</span>
 														</a>
 												</li>
+												<li class="m-menu__item " aria-haspopup="true">
+													<a href="ethcad.html" class="m-menu__link ">
+															<span class="m-menu__link-title">
+																<span class="m-menu__link-wrap">
+																	<span class="m-menu__link-text">
+																		ETH | EUR
+																	</span>
+																</span>
+															</span>
+														</a>
+												</li>
 											</ul>
 										</div>
 									</li>
@@ -226,7 +237,7 @@
 															<span class="m-menu__link-title">
 																<span class="m-menu__link-wrap">
 																	<span class="m-menu__link-text">
-																		LTC | USD
+																		LTC | USD {{ltc.USD | currency:"$":0 }}
 																	</span>
 																</span>
 															</span>
@@ -237,7 +248,40 @@
 															<span class="m-menu__link-title">
 																<span class="m-menu__link-wrap">
 																	<span class="m-menu__link-text">
-																		LTC | CAD
+																		LTC | CAD {{ltc.CAD | currency:"$":0 }}
+																	</span>
+																</span>
+															</span>
+														</a>
+												</li>
+												<li class="m-menu__item " aria-haspopup="true">
+													<a href="ltccad.html" class="m-menu__link ">
+															<span class="m-menu__link-title">
+																<span class="m-menu__link-wrap">
+																	<span class="m-menu__link-text">
+																		LTC | EUR {{ltc.EUR | currency:"$":0 }}
+																	</span>
+																</span>
+															</span>
+														</a>
+												</li>
+												<li class="m-menu__item " aria-haspopup="true">
+													<a href="ltccad.html" class="m-menu__link ">
+															<span class="m-menu__link-title">
+																<span class="m-menu__link-wrap">
+																	<span class="m-menu__link-text">
+																		LTC | BTC {{ltc.BTC | currency:"$":0 }}
+																	</span>
+																</span>
+															</span>
+														</a>
+												</li>
+												<li class="m-menu__item " aria-haspopup="true">
+													<a href="ltccad.html" class="m-menu__link ">
+															<span class="m-menu__link-title">
+																<span class="m-menu__link-wrap">
+																	<span class="m-menu__link-text">
+																		LTC | ETH {{ltc.ETH | currency:"$":0 }}
 																	</span>
 																</span>
 															</span>
