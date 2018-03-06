@@ -108,21 +108,17 @@ var DatatableChildRemoteDataExchange = function() {
 		});
 
 		function subTableInit(e) {
-			$('<div/>').attr('id', 'child_data_ajax_' + e.data.name).appendTo(e.detailCell).mDatatable({
+			$('<div/>').attr('id', 'child_data_ajax_' + e.data.id).appendTo(e.detailCell).mDatatable({
 				data: {
 					type: 'remote',
 					source: {
 						read: {
-							url: 'inc/api/datatables/demos/orders.php',
-							headers: {
-								'x-my-custom-header': 'some value',
-								'x-test-header': 'the value'
-							},
+							url: 'https://bots.alkemi.ai/SpotOrders',
 							params: {
 								// custom query params
 								query: {
 									generalSearch: '',
-									CustomerID: e.data.RecordID,
+									_limit: 10,
 								},
 							},
 						},
@@ -151,7 +147,7 @@ var DatatableChildRemoteDataExchange = function() {
 
 				// columns definition
 				columns: [{
-					field: 'RecordID',
+					field: 'name',
 					title: '#',
 					sortable: false,
 					width: 20,
@@ -161,16 +157,13 @@ var DatatableChildRemoteDataExchange = function() {
 				}, {
 					field: 'OrderID',
 					title: 'Order ID',
-					template: function(row) {
-						return '<span>' + row.OrderID + ' - ' + row.ShipCountry + '</span>';
-					},
 				}, {
-					field: 'ShipCountry',
-					title: 'Country',
+					field: 'Amount',
+					title: 'Amount',
 					width: 100,
 				}, {
-					field: 'ShipAddress',
-					title: 'Ship Address',
+					field: 'Price',
+					title: 'Price',
 				}, {
 					field: 'ShipName',
 					title: 'Ship Name',
