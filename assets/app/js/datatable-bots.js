@@ -171,7 +171,8 @@ var DatatableChildRemoteDataBot = function() {
 					type: 'remote',
 					source: {
 						read: {
-							url: 'inc/api/datatables/demos/orders.php',
+							url: 'https://api.alkemi.ai/bots',
+							request: 'GET',
 							headers: {
 								'x-my-custom-header': 'some value',
 								'x-test-header': 'the value'
@@ -209,93 +210,123 @@ var DatatableChildRemoteDataBot = function() {
 
 				// columns definition
 				columns: [{
-					field: 'RecordID',
-					title: '#',
-					sortable: false,
-					width: 20,
-					responsive: {
-						hide: 'xl'
+						field: 'OrderId',
+						title: '',
+						sortable: false,
+						width: 20,
+						textAlign: 'center',
+					}, {
+						field: 'Exchange',
+						title: 'Exchange',
+						sortable: false,
+						width: 75,
+						textAlign: 'center',
+						// callback function support for column rendering
+						template: function(row) {
+							var status = {
+								'USD': {
+									'title': 'Bitstamp',
+								},
+								'USDT': {
+									'title': 'Binance',
+								},
+							};
+							return '<span>' + status[row.Pair.SecondaryCurrency].title + '</span>';
+						},
+					}, {
+						field: 'OrderTypeAsString',
+						title: 'Type',
+						width: 40,
+						textAlign: 'center',
+						// callback function support for column rendering
+						template: function(row) {
+							var status = {
+								'Buy': {
+									'title': 'Buy',
+									'class': ' m-badge--primary'
+								},
+								'Sell': {
+									'title': 'Sell',
+									'class': ' m-badge--brand'
+								},
+							};
+							return '<span class="m-badge ' + status[row.OrderTypeAsString].class + ' m-badge--wide">' + status[row.OrderTypeAsString].title + '</span>';
+						},
+					}, {
+						field: 'Amount',
+						title: 'Size',
+						width: 40,
+						textAlign: 'center',
+					}, {
+						field: 'Pair.PrimaryCurrency',
+						title: 'Pair',
+						width: 40,
+					}, {
+						field: 'Price',
+						title: 'Price',
+						width: 60,
+						textAlign: 'center',
+					}, {
+						field: 'FeePercentage',
+						title: 'Fee %',
+						textAlign: 'center',
+						responsive: {
+							hidden: 'md',
+						},
+					}, {
+						field: 'FeeCosts',
+						title: 'Fee',
+						width: 50,
+						textAlign: 'center',
+					}, {
+						field: 'Profits',
+						title: 'Profit',
+						width: 40,
+						textAlign: 'center',
+					}, {
+						field: 'Notes',
+						title: 'Unique',
+						width: 0,
+						responsive: {
+							hidden: 'md',
+						},
 					},
-				}, {
-					field: 'OrderID',
-					title: 'Order ID',
-					template: function(row) {
-						return '<span>' + row.OrderID + ' - ' + row.ShipCountry + '</span>';
+					{
+						field: 'OrderStatus',
+						title: 'Status',
+						responsive: {
+							hidden: 'md'
+						},
+						// callback function support for column rendering
+						template: function(row) {
+							var status = {
+								'Timeout': {
+									'title': 'Timeout',
+									'state': 'warning'
+								},
+								'Canceled': {
+									'title': 'Canceled',
+									'state': 'danger'
+								},
+								'Completed': {
+									'title': 'Completed',
+									'state': 'accent'
+								},
+							};
+							return '<span class="m-badge m-badge--' + status[row.OrderStatus].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.OrderStatus].state + '">' +
+								status[row.OrderStatus].title + '</span>';
+						},
+					}, {
+						field: 'AddedTime',
+						title: 'Date',
+						sortable: 'desc',
+						width: 160,
+						// callback function support for column rendering
+						template: function(row) {
+							return row.AddedTime.substring(0, 10) + ' ' + row.AddedTime.substring(11, 23);
+						},
 					},
-				}, {
-					field: 'ShipCountry',
-					title: 'Country',
-					width: 100,
-				}, {
-					field: 'ShipAddress',
-					title: 'Ship Address',
-				}, {
-					field: 'ShipName',
-					title: 'Ship Name',
-				}, {
-					field: 'TotalPayment',
-					title: 'Payment',
-					type: 'number',
-				}, {
-					field: 'Status',
-					title: 'Status',
-					// callback function support for column rendering
-					template: function(row) {
-						var status = {
-							1: {
-								'title': 'Pending',
-								'class': 'm-badge--brand'
-							},
-							2: {
-								'title': 'Delivered',
-								'class': ' m-badge--metal'
-							},
-							3: {
-								'title': 'Canceled',
-								'class': ' m-badge--primary'
-							},
-							4: {
-								'title': 'Success',
-								'class': ' m-badge--success'
-							},
-							5: {
-								'title': 'Info',
-								'class': ' m-badge--info'
-							},
-							6: {
-								'title': 'Danger',
-								'class': ' m-badge--danger'
-							},
-							7: {
-								'title': 'Warning',
-								'class': ' m-badge--warning'
-							},
-						};
-						return '<span class="m-badge ' + status[row.Status].class + ' m-badge--wide">' + status[row.Status].title + '</span>';
-					},
-				}, {
-					field: 'Type',
-					title: 'Type',
-					// callback function support for column rendering
-					template: function(row) {
-						var status = {
-							1: {
-								'title': 'Online',
-								'state': 'danger'
-							},
-							2: {
-								'title': 'Retail',
-								'state': 'primary'
-							},
-							3: {
-								'title': 'Direct',
-								'state': 'accent'
-							},
-						};
-						return '<span class="m-badge m-badge--' + status[row.Type].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.Type].state + '">' +
-							status[row.Type].title + '</span>';
-					},
-				}, ],
+				],
 			});
 		}
 	};
