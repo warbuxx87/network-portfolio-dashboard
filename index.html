@@ -402,10 +402,10 @@
 											<!--begin::Widget5-->
 											<div class="m-widget20">
 												<div class="m-widget20__number m--font-success">
-													{{ trades.total_trades | number:0 }}
+													{{ balance.usd | currency:2 }}
 												</div>
 												<div class="m-widget25__desc_small">
-													Total Trades
+													USD balance
 												</div>
 												<div class="m-widget20__chart" style="height:160px;">
 													<canvas id="m_chart_trade1"></canvas>
@@ -423,10 +423,10 @@
 											<!--begin::Widget5-->
 											<div class="m-widget20">
 												<div class="m-widget20__number m--font-success">
-													{{trades.stats.avg_earn | currency:"$":2 }}
+													{{ balance.btc | number:0 }}
 												</div>
 												<div class="m-widget25__desc_small">
-													Average Gain Per Bitcoin Traded
+													Bitcoin Balance
 												</div>
 												<div class="m-widget20__chart" style="height:160px;">
 													<canvas id="m_chart_trade2"></canvas>
