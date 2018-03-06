@@ -270,6 +270,27 @@
 															</li>
 														</ul>
 													</li>
+													<li class="m-menu__item">
+														<h3 class "m-menu__heading m-menu__toggle">
+															<span class="m-menu__link-text">
+																Finance Reports
+															</span>
+															<i class="m-menu__ver-arrow la la-angle-right"></i>
+														</h3>
+														<ul class="m-menu__inner">
+															<li data-ng-repeat="bot in trades.bots | limitTo : 5 : 5" class="m-menu__item " aria-haspopup="true">
+																<a href="/routes/{{bot.name}}" class="m-menu__link ">
+																		<span class="m-menu__link-title">
+																			<span class="m-menu__link-wrap">
+																				<span class="m-menu__link-text">
+																					{{ bot.name }} | {{ bot.profits | currency:"$":2 }}
+																				</span>
+																			</span>
+																		</span>
+																	</a>
+															</li>
+														</ul>
+													</li>
 												</ul>
 											</div>
 										</div>
