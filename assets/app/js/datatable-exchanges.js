@@ -51,8 +51,8 @@ var DatatableChildRemoteDataExchange = function() {
 				width: 20,
 				textAlign: 'center',
 				template: function(row) {
-					return 'row.name';
-				}
+					return row.name;
+				},
 			}, {
 				field: 'name',
 				title: 'Exchange',
