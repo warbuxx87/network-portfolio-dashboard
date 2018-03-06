@@ -245,21 +245,33 @@
 												<i class="m-menu__hor-arrow la la-angle-down"></i>
 												<i class="m-menu__ver-arrow la la-angle-right"></i>
 											</a>
-										<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
+										<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left" style="width: 1000px;">
 											<span class="m-menu__arrow m-menu__arrow--adjust"></span>
-											<ul class="m-menu__subnav">
-												<li data-ng-repeat="bot in trades.bots" class="m-menu__item " aria-haspopup="true">
-													<a href="{{ $index + 1 }}.html" class="m-menu__link ">
-															<span class="m-menu__link-title">
-																<span class="m-menu__link-wrap">
-																	<span class="m-menu__link-text">
-																		{{ bot.name }} | {{ bot.profits | currency:"$":2 }}
-																	</span>
-																</span>
+											<div class="m-menu__subnav">
+												<ul class="m-menu__content">
+													<li class="m-menu__item">
+														<h3 class "m-menu__heading m-menu__toggle">
+															<span class="m-menu__link-text">
+																Finance Reports
 															</span>
-														</a>
-												</li>
-											</ul>
+															<i class="m-menu__ver-arrow la la-angle-right"></i>
+														</h3>
+														<ul class="m-menu__inner">
+															<li data-ng-repeat="bot in trades.bots | limit:5 " class="m-menu__item " aria-haspopup="true">
+																<a href="/routes/{{bot.name}}" class="m-menu__link ">
+																		<span class="m-menu__link-title">
+																			<span class="m-menu__link-wrap">
+																				<span class="m-menu__link-text">
+																					{{ bot.name }} | {{ bot.profits | currency:"$":2 }}
+																				</span>
+																			</span>
+																		</span>
+																	</a>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</div>
 										</div>
 									</li>
 									<!-- End Routes -->
@@ -277,7 +289,7 @@
 											<span class="m-menu__arrow m-menu__arrow--adjust"></span>
 											<ul class="m-menu__subnav">
 												<li data-ng-repeat="exchange in trades.exchanges | orderBy: '-updated' " class="m-menu__item " aria-haspopup="true">
-													<a href="{{ exchange.name }}.html" class="m-menu__link ">
+													<a href="/exchanges/{{ exchange.name }}" class="m-menu__link ">
 															<span class="m-menu__link-title">
 																<span class="m-menu__link-wrap">
 																	<span class="m-menu__link-text">
