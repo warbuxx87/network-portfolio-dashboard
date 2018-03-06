@@ -6,38 +6,38 @@ var DatatableChildRemoteDataExchange = function() {
 	// demo initializer
 	var exchange = function() {
 
-		var datatable = $('#m_datatable_exchange').mDatatable({
+		var datatable = $('#m_datatable_exchanges').mDatatable({
 			// datasource definition
 			data: {
 				type: 'remote',
 				source: {
 					read: {
-						url: 'https://bots.alkemi.ai/SpotOrders',
+						url: 'https://api.alkemi.ai/',
 						method: 'GET',
 						// custom headers
 						//headers: {
 						//	'x-my-custom-header': 'some value',
 						//	'x-test-header': 'the value'
 						//},
-						params: {
-							//pageination
-							_limit: 100,
-							_sort: 'UnixLastUpdate',
-							_order: 'desc',
-							// custom query params
-							//query: {
-							//	generalSearch: '',
-							//	EmployeeID: 1,
-							//	someParam: 'someValue',
-							//  token: 'token-value'
-							//}
-						},
+						//params: {
+						//pageination
+						//_limit: 100,
+						//_sort: 'UnixLastUpdate',
+						//_order: 'desc',
+						// custom query params
+						//query: {
+						//	generalSearch: '',
+						//	EmployeeID: 1,
+						//	someParam: 'someValue',
+						//  token: 'token-value'
+						//}
+						//},
 					},
 				},
-				pageSize: 10, // display 20 records per page
-				serverPaging: true,
+				pageSize: 10, // display 10 records per page
+				serverPaging: false,
 				serverFiltering: false,
-				serverSorting: true,
+				serverSorting: false,
 			},
 
 			// layout definition
@@ -50,7 +50,7 @@ var DatatableChildRemoteDataExchange = function() {
 
 			// column sorting
 			sortable: true,
-			pagination: true,
+			pagination: false,
 
 			detail: {
 				title: 'Load sub table',
@@ -63,114 +63,61 @@ var DatatableChildRemoteDataExchange = function() {
 
 			// columns definition
 			columns: [{
-					field: 'OrderId',
-					title: '',
-					sortable: false,
-					width: 20,
-					textAlign: 'center',
-				}, {
-					field: 'Exchange',
-					title: 'Exchange',
-					width: 75,
-					textAlign: 'center',
-					// callback function support for column rendering
-					template: function(row) {
-						var status = {
-							1: {
-								'title': 'Bitfinex',
-							},
-							16: {
-								'title': 'Binance',
-							},
-						};
-						return '<span>' + status[row.Platform].title + '</span>';
-					},
-				}, {
-					field: 'OrderTypeAsString',
-					title: 'Type',
-					width: 40,
-					textAlign: 'center',
-					// callback function support for column rendering
-					template: function(row) {
-						var status = {
-							'Buy': {
-								'title': 'Buy',
-								'class': ' m-badge--primary'
-							},
-							'Sell': {
-								'title': 'Sell',
-								'class': ' m-badge--brand'
-							},
-						};
-						return '<span class="m-badge ' + status[row.OrderTypeAsString].class + ' m-badge--wide">' + status[row.OrderTypeAsString].title + '</span>';
-					},
-				}, {
-					field: 'Amount',
-					title: 'Size',
-					width: 40,
-					textAlign: 'center',
-				}, {
-					field: 'Pair.PrimaryCurrency',
-					title: 'Pair',
-					width: 40,
-				}, {
-					field: 'Price',
-					title: 'Price',
-					width: 60,
-					textAlign: 'center',
-				}, {
-					field: 'FeePercentage',
-					title: 'Fee %',
-					width: 40,
-					textAlign: 'center',
-					responsive: {
-						hidden: 'md',
-					},
-				}, {
-					field: 'Notes',
-					title: 'Unique',
-					width: 0,
-					responsive: {
-						hidden: 'md',
-					},
+				field: 'exchanges.name',
+				title: 'Exchange',
+				sortable: false,
+				width: 75,
+				textAlign: 'center',
+			}, {
+				field: 'exchanges.order',
+				title: 'Type',
+				width: 40,
+				textAlign: 'center',
+				// callback function support for column rendering
+				template: function(row) {
+					var status = {
+						'Buy': {
+							'title': 'Buy',
+							'class': ' m-badge--primary'
+						},
+						'Sell': {
+							'title': 'Sell',
+							'class': ' m-badge--brand'
+						},
+					};
+					return '<span class="m-badge ' + status[row.exchanges.order].class + ' m-badge--wide">' + status[row.exchanges.order].title + '</span>';
 				},
-				{
-					field: 'OrderStatusAsString',
-					title: 'Status',
-					// callback function support for column rendering
-					template: function(row) {
-						var status = {
-							'Timeout': {
-								'title': 'Timeout',
-								'state': 'warning'
-							},
-							'CancelledByUser': {
-								'title': 'Cancel',
-								'state': 'danger'
-							},
-							'Completed': {
-								'title': 'Completed',
-								'state': 'accent'
-							},
-						};
-						return '<span class="m-badge m-badge--' + status[row.OrderStatusAsString].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.OrderStatusAsString].state + '">' +
-							status[row.OrderStatusAsString].title + '</span>';
-					},
-				}, {
-					field: 'AddedTime',
-					title: 'Date',
-					sortable: 'desc',
-					width: 160,
-					// callback function support for column rendering
-					template: function(row) {
-						return row.AddedTime.substring(0, 10) + ' ' + row.AddedTime.substring(11, 19);
-					},
+			}, {
+				field: 'exchanges.amount',
+				title: 'Size',
+				width: 40,
+				textAlign: 'center',
+			}, {
+				field: 'exchanges.pair',
+				title: 'Pair',
+				width: 40,
+				template: function(row) {
+					return 'BTC';
+				}
+			}, {
+				field: 'exchanges.price',
+				title: 'Price',
+				width: 60,
+				textAlign: 'center',
+			}, {
+				field: 'exchanges.updated',
+				title: 'Date',
+				sortable: 'desc',
+				width: 160,
+				// callback function support for column rendering
+				template: function(row) {
+					return row.exchanges.updated.substring(0, 10) + ' ' + row.exchanges.updated.substring(11, 19);
 				},
-			],
+			}, ],
 		});
 
 		function subTableInit(e) {
-			$('<div/>').attr('id', 'child_data_ajax_' + e.data.RecordID).appendTo(e.detailCell).mDatatable({
+			$('<div/>').attr('id', 'child_data_ajax_' + e.data.exchanges.name).appendTo(e.detailCell).mDatatable({
 				data: {
 					type: 'remote',
 					source: {

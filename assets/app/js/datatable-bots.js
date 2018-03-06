@@ -6,7 +6,7 @@ var DatatableChildRemoteDataBot = function() {
 	// demo initializer
 	var bot = function() {
 
-		var datatable = $('#m_datatable_bot').mDatatable({
+		var datatable = $('#m_datatable_bots').mDatatable({
 			// datasource definition
 			data: {
 				type: 'remote',
