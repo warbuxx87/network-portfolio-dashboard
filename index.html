@@ -235,6 +235,36 @@
 											</ul>
 										</div>
 									</li>
+
+									<!-- Exchanges -->
+									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
+										<a href="#" class="m-menu__link m-menu__toggle">
+												<i class="m-menu__link-icon flaticon-interface-6"></i>
+												<span class="m-menu__link-text">
+													Exchanges
+												</span>
+												<i class="m-menu__hor-arrow la la-angle-down"></i>
+												<i class="m-menu__ver-arrow la la-angle-right"></i>
+											</a>
+										<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
+											<span class="m-menu__arrow m-menu__arrow--adjust"></span>
+											<ul class="m-menu__subnav">
+												<li data-ng-repeat="exchange in trades.exchanges | orderBy: '-updated' " class="m-menu__item " aria-haspopup="true">
+													<a href="/exchanges/{{ exchange.name }}" class="m-menu__link ">
+															<span class="m-menu__link-title">
+																<span class="m-menu__link-wrap">
+																	<span class="m-menu__link-text">
+																		{{ exchange.name }} | {{ exchange.total | number:0 }}
+																	</span>
+																</span>
+															</span>
+														</a>
+												</li>
+											</ul>
+										</div>
+									</li>
+									<!-- End Exchanges -->
+
 									<!-- Routes -->
 									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
 										<a href="#" class="m-menu__link m-menu__toggle">
@@ -245,7 +275,7 @@
 												<i class="m-menu__hor-arrow la la-angle-down"></i>
 												<i class="m-menu__ver-arrow la la-angle-right"></i>
 											</a>
-										<div class="m-menu__submenu  m-menu__submenu--fixed m-menu__submenu--left" style="width: 1000px;">
+										<div class="m-menu__submenu  m-menu__submenu--fixed m-menu__submenu--right" style="width: 1000px;">
 											<span class="m-menu__arrow m-menu__arrow--adjust"></span>
 											<div class="m-menu__subnav">
 												<ul class="m-menu__content">
@@ -338,34 +368,6 @@
 										</div>
 									</li>
 									<!-- End Routes -->
-									<!-- Exchanges -->
-									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
-										<a href="#" class="m-menu__link m-menu__toggle">
-												<i class="m-menu__link-icon flaticon-interface-6"></i>
-												<span class="m-menu__link-text">
-													Exchanges
-												</span>
-												<i class="m-menu__hor-arrow la la-angle-down"></i>
-												<i class="m-menu__ver-arrow la la-angle-right"></i>
-											</a>
-										<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
-											<span class="m-menu__arrow m-menu__arrow--adjust"></span>
-											<ul class="m-menu__subnav">
-												<li data-ng-repeat="exchange in trades.exchanges | orderBy: '-updated' " class="m-menu__item " aria-haspopup="true">
-													<a href="/exchanges/{{ exchange.name }}" class="m-menu__link ">
-															<span class="m-menu__link-title">
-																<span class="m-menu__link-wrap">
-																	<span class="m-menu__link-text">
-																		{{ exchange.name }} | {{ exchange.total | number:0 }}
-																	</span>
-																</span>
-															</span>
-														</a>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<!-- End Exchanges -->
 								</ul>
 							</div>
 						</div>
