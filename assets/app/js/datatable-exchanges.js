@@ -163,7 +163,7 @@ var DatatableChildRemoteDataExchange = function() {
 					width: 160,
 					// callback function support for column rendering
 					template: function(row) {
-						return row.AddedTime.substring(0, 10) + ' ' + row.AddedTime.substring(11, 23);
+						return row.AddedTime.substring(0, 10) + ' ' + row.AddedTime.substring(11, 19);
 					},
 				},
 			],
