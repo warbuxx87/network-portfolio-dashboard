@@ -12,26 +12,8 @@ var DatatableChildRemoteDataExchange = function() {
 				type: 'remote',
 				source: {
 					read: {
-						url: 'https://api.alkemi.ai/',
+						url: 'https://api.alkemi.ai/exchanges',
 						method: 'GET',
-						// custom headers
-						//headers: {
-						//	'x-my-custom-header': 'some value',
-						//	'x-test-header': 'the value'
-						//},
-						//params: {
-						//pageination
-						//_limit: 100,
-						//_sort: 'UnixLastUpdate',
-						//_order: 'desc',
-						// custom query params
-						//query: {
-						//	generalSearch: '',
-						//	EmployeeID: 1,
-						//	someParam: 'someValue',
-						//  token: 'token-value'
-						//}
-						//},
 					},
 				},
 				pageSize: 10, // display 10 records per page
@@ -63,13 +45,13 @@ var DatatableChildRemoteDataExchange = function() {
 
 			// columns definition
 			columns: [{
-				field: 'exchanges.name',
+				field: 'name',
 				title: 'Exchange',
 				sortable: false,
 				width: 75,
 				textAlign: 'center',
 			}, {
-				field: 'exchanges.order',
+				field: 'order',
 				title: 'Type',
 				width: 40,
 				textAlign: 'center',
@@ -85,7 +67,7 @@ var DatatableChildRemoteDataExchange = function() {
 							'class': ' m-badge--brand'
 						},
 					};
-					return '<span class="m-badge ' + status[row.exchanges.order].class + ' m-badge--wide">' + status[row.exchanges.order].title + '</span>';
+					return '<span class="m-badge ' + status[row.order].class + ' m-badge--wide">' + status[row.order].title + '</span>';
 				},
 			}, {
 				field: 'exchanges.amount',
@@ -111,13 +93,13 @@ var DatatableChildRemoteDataExchange = function() {
 				width: 160,
 				// callback function support for column rendering
 				template: function(row) {
-					return row.exchanges.updated.substring(0, 10) + ' ' + row.exchanges.updated.substring(11, 19);
+					return row.updated.substring(0, 10) + ' ' + row.updated.substring(11, 19);
 				},
 			}, ],
 		});
 
 		function subTableInit(e) {
-			$('<div/>').attr('id', 'child_data_ajax_' + e.data.exchanges.name).appendTo(e.detailCell).mDatatable({
+			$('<div/>').attr('id', 'child_data_ajax_' + e.data.name).appendTo(e.detailCell).mDatatable({
 				data: {
 					type: 'remote',
 					source: {
