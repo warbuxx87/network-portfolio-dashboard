@@ -238,7 +238,7 @@
 									<!-- Routes -->
 									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
 										<a href="#" class="m-menu__link m-menu__toggle">
-												<i class="m-menu__link-icon flaticon-analytics"></i>
+												<i class="m-menu__link-icon flaticon-route"></i>
 												<span class="m-menu__link-text">
 													Routes
 												</span>
@@ -266,9 +266,9 @@
 									<!-- Exchanges -->
 									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
 										<a href="#" class="m-menu__link m-menu__toggle">
-												<i class="m-menu__link-icon flaticon-interface-8 "></i>
+												<i class="m-menu__link-icon flaticon-interface-6"></i>
 												<span class="m-menu__link-text">
-													Exchanges
+													Routes
 												</span>
 												<i class="m-menu__hor-arrow la la-angle-down"></i>
 												<i class="m-menu__ver-arrow la la-angle-right"></i>
@@ -276,78 +276,12 @@
 										<div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left">
 											<span class="m-menu__arrow m-menu__arrow--adjust"></span>
 											<ul class="m-menu__subnav">
-												<li class="m-menu__item " aria-haspopup="true">
-													<a href="gemini.html" class="m-menu__link ">
+												<li data-ng-repeat="exchange in trades.exchanges | orderBy: '-updated' " class="m-menu__item " aria-haspopup="true">
+													<a href="{{ exchange.name }}.html" class="m-menu__link ">
 															<span class="m-menu__link-title">
 																<span class="m-menu__link-wrap">
 																	<span class="m-menu__link-text">
-																		 {{trades.exchanges[0].name}} ({{trades.exchanges[0].total}})
-																	</span>
-																</span>
-															</span>
-														</a>
-												</li>
-												<li class="m-menu__item " aria-haspopup="true">
-													<a href="gdax.html" class="m-menu__link ">
-															<span class="m-menu__link-title">
-																<span class="m-menu__link-wrap">
-																	<span class="m-menu__link-text">
-																		 {{trades.exchanges[1].name}} ({{trades.exchanges[1].total}})
-																	</span>
-																</span>
-															</span>
-														</a>
-												</li>
-												<li class="m-menu__item " aria-haspopup="true">
-													<a href="bistamp.html" class="m-menu__link ">
-															<span class="m-menu__link-title">
-																<span class="m-menu__link-wrap">
-																	<span class="m-menu__link-text">
-																		  {{trades.exchanges[2].name}} ({{trades.exchanges[2].total}})
-																	</span>
-																</span>
-															</span>
-														</a>
-												</li>
-												<li class="m-menu__item " aria-haspopup="true">
-													<a href="kraken.html" class="m-menu__link ">
-															<span class="m-menu__link-title">
-																<span class="m-menu__link-wrap">
-																	<span class="m-menu__link-text">
-																		 {{trades.exchanges[3].name}} ({{trades.exchanges[3].total}})
-																	</span>
-																</span>
-															</span>
-														</a>
-												</li>
-												<li class="m-menu__item " aria-haspopup="true">
-													<a href="bitfinex.html" class="m-menu__link ">
-															<span class="m-menu__link-title">
-																<span class="m-menu__link-wrap">
-																	<span class="m-menu__link-text">
-																		 {{trades.exchanges[4].name}} ({{trades.exchanges[4].total}})
-																	</span>
-																</span>
-															</span>
-														</a>
-												</li>
-												<li class="m-menu__item " aria-haspopup="true">
-													<a href="bittrex.html" class="m-menu__link ">
-															<span class="m-menu__link-title">
-																<span class="m-menu__link-wrap">
-																	<span class="m-menu__link-text">
-																		 {{trades.exchanges[5].name}} ({{trades.exchanges[5].total}})
-																	</span>
-																</span>
-															</span>
-														</a>
-												</li>
-												<li class="m-menu__item " aria-haspopup="true">
-													<a href="binance.html" class="m-menu__link ">
-															<span class="m-menu__link-title">
-																<span class="m-menu__link-wrap">
-																	<span class="m-menu__link-text">
-																		 {{trades.exchanges[6].name}} ({{trades.exchanges[6].total}})
+																		{{ exchange.name }} | {{ exchange.total | number:0 }}
 																	</span>
 																</span>
 															</span>
@@ -356,6 +290,7 @@
 											</ul>
 										</div>
 									</li>
+									<!-- End Exchanges -->
 								</ul>
 							</div>
 						</div>
