@@ -45,7 +45,18 @@ var DatatableChildRemoteDataExchange = function() {
 
 			// columns definition
 			columns: [{
-				field: 'name',
+				field: 'id',
+				title: '',
+				sortable: false,
+				width: 20,
+				textAlign: 'center',
+				template: {
+					{
+						exchange
+					}
+				},
+			}, {
+				field: 'exchange',
 				title: 'Exchange',
 				sortable: false,
 				width: 75,
@@ -99,7 +110,7 @@ var DatatableChildRemoteDataExchange = function() {
 		});
 
 		function subTableInit(e) {
-			$('<div/>').attr('id', 'child_data_ajax_' + e.data.name).appendTo(e.detailCell).mDatatable({
+			$('<div/>').attr('id', 'child_data_ajax_' + e.data.id).appendTo(e.detailCell).mDatatable({
 				data: {
 					type: 'remote',
 					source: {
