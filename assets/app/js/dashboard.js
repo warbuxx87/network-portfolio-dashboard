@@ -102,7 +102,7 @@ var Dashboard = function() {
 		}
 
 		var chartData = {
-			labels: ["Bot 1", "Bot 2", "Bot 3", "Bot 4", "Bot 5", "Bot 6", "Bot 7", "Bot 8", "Bot 9", "Bot 10", "Bot 11", "Bot 12", "Bot 13", "Bot 14", "Bot 15", "Bot 16"],
+			labels: ["Bitstamp Binance", "Bitfinex Bittrex", "Bitstamp Gemini", "Kraken Bittrex", "Bitfinex Gemini", "Bitstamp Bitfinex", "Kraken GDAX", "Bot 8", "Bot 9", "Bot 10", "Bot 11", "Bot 12", "Bot 13", "Bot 14", "Bot 15", "Bot 16"],
 			datasets: [{
 				//label: 'Dataset 1',
 				backgroundColor: '#568ca7',
