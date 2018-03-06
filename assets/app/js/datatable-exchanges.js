@@ -108,7 +108,7 @@ var DatatableChildRemoteDataExchange = function() {
 		});
 
 		function subTableInit(e) {
-			$('<div/>').attr('id', 'child_data_ajax_' + e.data.id).appendTo(e.detailCell).mDatatable({
+			$('<div/>').attr('id', 'child_data_ajax_' + e.data.name).appendTo(e.detailCell).mDatatable({
 				data: {
 					type: 'remote',
 					source: {
@@ -149,8 +149,41 @@ var DatatableChildRemoteDataExchange = function() {
 				columns: [{
 					field: 'name',
 					title: '#',
+					// callback function support for column rendering
+					template: function(row) {
+						var status = {
+							1: {
+								'title': 'Bitfinex',
+							},
+							2: {
+								'title': 'Delivered',
+								'class': ' m-badge--metal'
+							},
+							3: {
+								'title': 'Canceled',
+								'class': ' m-badge--primary'
+							},
+							4: {
+								'title': 'Success',
+								'class': ' m-badge--success'
+							},
+							5: {
+								'title': 'Info',
+								'class': ' m-badge--info'
+							},
+							6: {
+								'title': 'Danger',
+								'class': ' m-badge--danger'
+							},
+							7: {
+								'title': 'Warning',
+								'class': ' m-badge--warning'
+							},
+						};
+						return status[row.Platform].title;
+					},
 					sortable: false,
-					width: 20,
+					width: 50,
 					responsive: {
 						hide: 'xl'
 					},
