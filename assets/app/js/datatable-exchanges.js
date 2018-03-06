@@ -116,9 +116,9 @@ var DatatableChildRemoteDataExchange = function() {
 							url: 'https://bots.alkemi.ai/SpotOrders',
 							params: {
 								// custom query params
+								_limit: 10,
 								query: {
 									generalSearch: '',
-									_limit: 10,
 								},
 							},
 						},
