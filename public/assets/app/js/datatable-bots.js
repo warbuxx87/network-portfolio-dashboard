@@ -27,7 +27,7 @@ var DatatableChildRemoteDataBot = function() {
 				theme: 'default',
 				scroll: false,
 				height: null,
-				footer: true,
+				footer: false,
 			},
 
 			// column sorting
