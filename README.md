@@ -11,15 +11,28 @@ This README would normally document whatever steps are necessary to get your app
 ### How do I get set up? ###
 
 * Summary of set up
+```
+git clone 'https://user@bitbucket.org/project-alkemi/arbitrage-performance-monitor.git'
+```
 * Configuration
+
 * Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-```git clone 'https://user@bitbucket.org/project-alkemi/arbitrage-performance-monitor.git'
-cd arbitrage-performance-monitor
+```
 npm install
-npm start ```
+```
+* Database configuration
+
+* How to run tests
+```
+npm test
+```
+* Deployment instructions
+
+```
+
+cd arbitrage-performance-monitor
+npm start 
+```
 
 ### Contribution guidelines ###
 
