@@ -130,10 +130,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 
 	$scope.getClass = function(value) {
 		if ((typeof value) == "string" & value == "Buy") {
-			return "green";
+			return "m--font-bold m--font-accent";
 		}
 		if ((typeof value) == "string" & value == "Sell") {
-			return "red";
+			return "m--font-bold m--font-danger";
 		}
 		if ((typeof value) == "string") return "";
 		if (value == 0) return "";
