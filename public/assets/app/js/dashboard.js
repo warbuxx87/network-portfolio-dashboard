@@ -93,6 +93,37 @@ var Dashboard = function() {
 	}
 
 	//== Successful TradesChart.
+
+	function getRoutes(callback) {
+		var apiUrl = "https://api.alkemi.ai";
+		var xhttp = new XMLHttpRequest();
+
+		xhttp.addEventListener('load', callback);
+		xhttp.addEventListener('error', () => console.log("Request to " + apiUrl + " failed"));
+
+		xhttp.open("GET", apiUrl, true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send();
+	}
+
+	var routeTrade = [];
+	var routeEarn = [];
+	var routeLabels = [];
+
+	getRoutes(function() {
+		//console.log(JSON.parse(this.responseText));
+		var data = JSON.parse(this.responseText);
+		console.log(data);
+		for (var i = 0; i < data.bots.length; i++) {
+			routeLabels.push(data.bots[i].name)
+			routeTrade.push(data.bots[i].trades);
+			routeEarn.push(data.bots[i].profits);
+		}
+	});
+	//console.log(routeLabels);
+	//console.log(routeTrade);
+	//console.log(routeEarn);
+
 	//** Based on Chartjs plugin - http://www.chartjs.org/
 	var dailySales = function() {
 		var chartContainer = $('#m_chart_daily_sales');
@@ -102,19 +133,15 @@ var Dashboard = function() {
 		}
 
 		var chartData = {
-			labels: ["Bitstamp Binance", "Bitfinex Bittrex", "Bitstamp Gemini", "Kraken Bittrex", "Bitfinex Gemini", "Bitstamp Bitfinex", "Kraken GDAX", "Bot 8", "Bot 9", "Bot 10", "Bot 11", "Bot 12", "Bot 13", "Bot 14", "Bot 15", "Bot 16"],
+			labels: routeLabels,
 			datasets: [{
-				//label: 'Dataset 1',
+				label: 'Profits',
 				backgroundColor: '#568ca7',
-				data: [
-					20463.31, 2752.74, 4754.34, 3836.07, 13011.62, 15919.78, 11482.91, 6139.91, 50658.60, 20621.41, 20621.41, 22083.73, 35737.51, 8101.13, 6336.42, 2579.69
-				]
+				data: routeEarn
 			}, {
-				//label: 'Dataset 2',
+				label: 'Trades',
 				backgroundColor: '#f3f3fb',
-				data: [
-					742, 1523, 189, 138, 639, 604, 427, 221, 1859, 1997, 1073, 1414, 297, 319, 250, 440
-				]
+				data: routeTrade
 			}]
 		};
 
@@ -133,7 +160,7 @@ var Dashboard = function() {
 					caretPadding: 10
 				},
 				legend: {
-					display: false
+					display: true
 				},
 				responsive: true,
 				maintainAspectRatio: false,
@@ -142,11 +169,11 @@ var Dashboard = function() {
 					xAxes: [{
 						display: false,
 						gridLines: false,
-						stacked: true
+						stacked: false
 					}],
 					yAxes: [{
 						display: false,
-						stacked: true,
+						stacked: false,
 						gridLines: false
 					}]
 				},

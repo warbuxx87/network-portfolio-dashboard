@@ -94,6 +94,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 		var usd = 0;
 		var btc = 0;
 		var avg_earn = 0;
+		$scope.loading = false;
 		$http.get('https://api.alkemi.ai')
 			.then(function(response) {
 				$scope.trades = response.data;
@@ -121,10 +122,14 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				if (total_trades) {
 					$scope.trades.total_trades = total_trades;
 				}
-				setTimeout(upd_trades, 10000);
+				setTimeout(upd_trades, 1500);
 			})
 			.catch(function() {
-				setTimeout(upd_trades, 10000);
+				setTimeout(upd_trades, 1500);
+			})
+			.finally(function() {
+				// Hide loading spinner whether our call succeeded or failed.
+				$scope.loading = false;
 			});
 	};
 
