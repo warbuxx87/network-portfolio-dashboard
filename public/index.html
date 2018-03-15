@@ -47,6 +47,7 @@
 	<!--begin::Base Styles -->
 	<link href="assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="assets/dash/theme/base/style.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="stylesheets/style.css" rel="stylesheet" type="text/css" />
 	<!--end::Base Styles -->
 
 	<!-- ================= Favicon ================== -->
@@ -83,7 +84,7 @@
 							<div class="m-stack m-stack--ver m-stack--general m-stack--inline">
 								<div class="m-stack__item m-stack__item--middle m-brand__logo">
 									<a href="/" class="m-brand__logo-wrapper">
-											<img alt="Alkemi Logo" src="assets/dash/theme/media/img/logo/logo_wh.svg"/>
+											<img alt="Alkemi Logo" src="/assets/dash/theme/media/img/logo/logo_wh.svg"/>
 										</a>
 								</div>
 								<div class="m-stack__item m-stack__item--middle m-brand__tools">
@@ -125,7 +126,11 @@
 									</li>
 									<li class="m-menu__item m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
 										<a href="/btcusd" class="m-menu__link m-menu__toggle">
-											  <i class="m-menu__link-icon"><img src="assets/app/media/img/icons/BTC-alt.svg" height="20px" alt="Bitcoin"></i>
+											  <i class="m-menu__link-icon">
+													<ng-include
+													  src="'/assets/app/media/img/icons/BTC-alt.svg'">
+													</ng-include>
+												</i>
 												<span class="m-menu__link-text">
 													Bitcoin {{btc.idx | currency:"$":0 }}
 												</span>
@@ -174,7 +179,11 @@
 									</li>
 									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
 										<a href="#" class="m-menu__link m-menu__toggle">
-												<i class="m-menu__link-icon"><img src="assets/app/media/img/icons/ETH-alt.svg" height="20px" alt="Ethereum"></i>
+												<i class="m-menu__link-icon">
+													<ng-include
+													  src="'/assets/app/media/img/icons/ETH-alt.svg'">
+													</ng-include>
+												</i>
 												<span class="m-menu__link-text">
 													Ethereum {{eth.idx | currency:"$":0 }}
 												</span>
@@ -222,7 +231,11 @@
 									</li>
 									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
 										<a href="#" class="m-menu__link m-menu__toggle">
-												<i class="m-menu__link-icon"><img src="assets/app/media/img/icons/LTC-alt.svg" height="20px" alt="Litcoin"></i>
+												<i class="m-menu__link-icon">
+													<ng-include
+													  src="'/assets/app/media/img/icons/LTC-alt.svg'">
+													</ng-include>
+												</i>
 												<span class="m-menu__link-text">
 													Litecoin {{ltc.USD | currency:"$":0 }}
 												</span>

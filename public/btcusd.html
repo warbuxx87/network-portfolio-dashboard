@@ -47,6 +47,7 @@
 	<!--begin::Base Styles -->
 	<link href="/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="/assets/dash/theme/base/style.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
 	<!--end::Base Styles -->
 
 	<!-- ================= Favicon ================== -->
@@ -115,7 +116,7 @@
 								</button>
 							<div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-dark m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light ">
 								<ul class="m-menu__nav m-menu__nav--submenu-arrow ">
-									<li class="m-menu__item" aria-haspopup="true">
+									<li class="m-menu__item m-menu__item--rel" aria-haspopup="true">
 										<a href="/" class="m-menu__link ">
 												<i class="m-menu__link-icon flaticon-analytics"></i>
 												<span class="m-menu__link-text">
@@ -123,9 +124,13 @@
 												</span>
 											</a>
 									</li>
-									<li class="m-menu__item m-menu__item--active m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
-										<a href="#" class="m-menu__link m-menu__toggle">
-											  <i class="m-menu__link-icon"><img src="/assets/app/media/img/icons/BTC-alt.svg" height="20px" alt="Bitcoin"></i>
+									<li class="m-menu__item m-menu__item--submenu m-menu__item--active" data-menu-submenu-toggle="click" aria-haspopup="true">
+										<a href="/btcusd" class="m-menu__link m-menu__toggle">
+												<i class="m-menu__link-icon">
+													<ng-include
+														src="'/assets/app/media/img/icons/BTC-alt.svg'">
+													</ng-include>
+												</i>
 												<span class="m-menu__link-text">
 													Bitcoin {{btc.idx | currency:"$":0 }}
 												</span>
@@ -137,7 +142,7 @@
 											<ul class="m-menu__subnav">
 												<li class="m-menu__item " aria-haspopup="true">
 													<a href="/coin/btc/usd" class="m-menu__link ">
-														   <span class="m-menu__item-here"></span>
+															 <span class="m-menu__item-here"></span>
 															<span class="m-menu__link-title">
 																<span class="m-menu__link-wrap">
 																	<span class="m-menu__link-text">
@@ -174,7 +179,11 @@
 									</li>
 									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
 										<a href="#" class="m-menu__link m-menu__toggle">
-												<i class="m-menu__link-icon"><img src="/assets/app/media/img/icons/ETH-alt.svg" height="20px" alt="Ethereum"></i>
+												<i class="m-menu__link-icon">
+													<ng-include
+														src="'/assets/app/media/img/icons/ETH-alt.svg'">
+													</ng-include>
+												</i>
 												<span class="m-menu__link-text">
 													Ethereum {{eth.idx | currency:"$":0 }}
 												</span>
@@ -189,7 +198,7 @@
 															<span class="m-menu__link-title">
 																<span class="m-menu__link-wrap">
 																	<span class="m-menu__link-text">
-																		ETH | USD {{eth.idx | currency:"$":0 }}
+																		ETH | USD  {{eth.idx | currency:"$":0 }}
 																	</span>
 																</span>
 															</span>
@@ -222,9 +231,13 @@
 									</li>
 									<li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
 										<a href="#" class="m-menu__link m-menu__toggle">
-												<i class="m-menu__link-icon"><img src="/assets/app/media/img/icons/LTC-alt.svg" height="20px" alt="Litcoin"></i>
+												<i class="m-menu__link-icon">
+													<ng-include
+														src="'/assets/app/media/img/icons/LTC-alt.svg'">
+													</ng-include>
+												</i>
 												<span class="m-menu__link-text">
-													Litecoin {{ ltc.USD | currency:"$":0 }}
+													Litecoin {{ltc.USD | currency:"$":0 }}
 												</span>
 												<i class="m-menu__hor-arrow la la-angle-down"></i>
 												<i class="m-menu__ver-arrow la la-angle-right"></i>
