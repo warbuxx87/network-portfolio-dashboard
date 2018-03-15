@@ -492,8 +492,8 @@
 										<div class="m-portlet__body">
 											<!--begin::Widget5-->
 											<div class="m-widget20">
-												<div class="m-widget20__number m--font-success">
-													{{ btc.total_volume | number:0 }}
+												<div ng-bind="btc.total_volume | number:0" class="m-widget20__number m--font-success">
+													Loading
 												</div>
 												<div class="m-widget25__desc_small">
 													24 HR Exchange Volume
@@ -677,14 +677,14 @@
 										</div>
 									</div>
 									<div class="col m--align-right" ng-show="btc.margin">
-										<span class="m-widget1__roi">
-							{{ btc.margin |number:2 }}%
-						</span>
+										<span ng-bind="btc.margin | number:2" class="m-widget1__roi">
+					           Loading
+									 </span><span>%</span>
 									</div>
 									<!-- loads this div when no opportunity available -->
 									<div class="col m--align-right" ng-hide="btc.margin">
 										<span class="m-widget1__roi">
-								0%
+								0.00%
 							</span>
 									</div>
 
@@ -696,11 +696,11 @@
 										</div>
 										<div class="m-portlet  m-portlet--fit" style="min-height: 60px">
 											<div class="m-portlet__body" style="background-color: #568ca7; border-radius: 2px; padding: 10px">
-												<div class="buy_ticker">
-													{{ btc.buy_market.ask | currency:"$":2 }}
+												<div ng-bind="btc.buy_market.ask | currency:'$':2" class="buy_ticker">
+													Loading
 												</div>
-												<div class="exchange_buy">
-													{{ btc.buy_market.name }}
+												<div ng-bind-"btc.buy_market.name" class="exchange_buy">
+													Loading
 												</div>
 											</div>
 										</div>
@@ -712,11 +712,11 @@
 										<div class="m-portlet  m-portlet--fit" style="min-height: 60px">
 
 											<div class="m-portlet__body" style="background-color: #7b71a1; border-radius: 2px; padding: 10px">
-												<div class="sell_ticker">
-													{{ btc.sell_market.bid | currency:"$":2 }}
+												<div ng-bind="btc.sell_market.bid | currency:'$':2" class="sell_ticker">
+													Loading
 												</div>
-												<div class="exchange_sell">
-													{{ btc.sell_market.name }}
+												<div ng-bind="btc.sell_market.name | currency:'$':2" class="exchange_sell">
+													Loading
 												</div>
 											</div>
 										</div>
