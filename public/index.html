@@ -709,13 +709,13 @@
 										<div class="sell_head">
 											<h5>BEST SELL</h5>
 										</div>
-										<div class="m-portlet  m-portlet--fit" style="min-height: 60px">
+										<div class="m-portlet m-portlet--fit" style="min-height: 60px">
 
 											<div class="m-portlet__body" style="background-color: #7b71a1; border-radius: 2px; padding: 10px">
 												<div ng-bind="btc.sell_market.bid | currency:'$':2" class="sell_ticker">
 													Loading
 												</div>
-												<div ng-bind="btc.sell_market.name | currency:'$':2" class="exchange_sell">
+												<div ng-bind="btc.sell_market.name" class="exchange_sell">
 													Loading
 												</div>
 											</div>
@@ -729,11 +729,11 @@
 									<div class="m-portlet__head-caption">
 										<div class="m-portlet__head-title">
 											<h3 class="m-portlet__head-text">
-								Successful Trades
-								<span class="m-portlet__head-desc">
-							    BTC Confirmed Trades
-								</span>
-							</h3>
+													Successful Trades
+												<span class="m-portlet__head-desc">
+											    Confirmed Trades
+												</span>
+											</h3>
 										</div>
 									</div>
 								</div>
