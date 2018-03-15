@@ -476,9 +476,9 @@
 								</div>
 								<div class="m-portlet__body">
 									<div class="m-widget25">
-										<span class="m-widget25__price m--font-total">
-							{{btc.idx | currency:"$":2 }}
-						</span>
+										<span ng-bind="btc.idx | currency:'$':2" class="m-widget25__price m--font-total">
+							      Loading...
+										</span>
 										<div class="m-widget25__desc">
 											Volume Weighted Average Price
 										</div>
@@ -514,9 +514,9 @@
 											<!--begin::Widget5-->
 											<div class="m-widget20">
 												<div id="index-change" class="m-widget20__number m--font-success">
-												 Loading ...
+													Loading ...
 												</div>
-												<div  class="m-widget25__desc_small">
+												<div class="m-widget25__desc_small">
 													24 Hour Change
 												</div>
 												<div class="m-widget20__chart" style="height:160px;">
@@ -534,57 +534,57 @@
 						<div class="col-xl-7">
 							<!--begin:: Exchange Performance-->
 							<div class="m-portlet m-portlet--accent m-portlet--head-solid-bg m-portlet--head-sm" data-portlet="true" id="m_portlet_tools_1">
-										<div class="m-portlet__head m-brand" style="background-color: #568ca7;">
-											<div class="m-portlet__head-caption">
-												<div class="m-portlet__head-title">
-													<span class="m-portlet__head-icon">
+								<div class="m-portlet__head m-brand" style="background-color: #568ca7;">
+									<div class="m-portlet__head-caption">
+										<div class="m-portlet__head-title">
+											<span class="m-portlet__head-icon">
 														<i class="flaticon-diagram"></i>
 													</span>
-													<h3 class="m-portlet__head-text">
+											<h3 class="m-portlet__head-text">
 														Market Overview
 													</h3>
-												</div>
-											</div>
-											<div class="m-portlet__head-tools">
-												<ul class="m-portlet__nav">
-													<li class="m-portlet__nav-item">
-														<a href="" data-portlet-tool="toggle" class="m-portlet__nav-link m-portlet__nav-link--icon" title="" data-original-title="Collapse"><i class="la la-angle-down"></i></a>
-													</li>
-													<li class="m-portlet__nav-item">
-														<a href="#" data-portlet-tool="fullscreen" class="m-portlet__nav-link m-portlet__nav-link--icon" title="" data-original-title="Fullscreen"><i class="la la-expand"></i></a>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="m-portlet__body">
-											<div class="table-responsive">
-			                  <table class="table table-bordered table-hover table-striped">
-			                    <thead>
-			                      <tr>
-			                        <th>Exchange</th>
-			                        <th>%</th>
-			                        <th>Bid</th>
-			                        <th>Ask</th>
-			                        <th>%</th>
-			                        <th>Volume</th>
-			                        <th>Updated</th>
-			                      </tr>
-			                    </thead>
-			                    <tbody>
-			                      <tr data-ng-repeat="market in btc.markets">
-			                        <td>{{ market.name }}</td>
-			                        <td> <span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></span></td>
-			                        <td>{{ market.bid | currency:"$":2 }}</td>
-			                        <td>{{ market.ask | currency:"$":2 }}</td>
-			                        <td> <span ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></span></td>
-			                        <td>{{ market.volume | number:2 }} </td>
-			                        <td>{{ market.updated | date:'HH:mm:ss' }}</td>
-			                      </tr>
-			                    </tbody>
-			                  </table>
-			                </div>
 										</div>
 									</div>
+									<div class="m-portlet__head-tools">
+										<ul class="m-portlet__nav">
+											<li class="m-portlet__nav-item">
+												<a href="" data-portlet-tool="toggle" class="m-portlet__nav-link m-portlet__nav-link--icon" title="" data-original-title="Collapse"><i class="la la-angle-down"></i></a>
+											</li>
+											<li class="m-portlet__nav-item">
+												<a href="#" data-portlet-tool="fullscreen" class="m-portlet__nav-link m-portlet__nav-link--icon" title="" data-original-title="Fullscreen"><i class="la la-expand"></i></a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="m-portlet__body">
+									<div class="table-responsive">
+										<table class="table table-bordered table-hover table-striped">
+											<thead>
+												<tr>
+													<th>Exchange</th>
+													<th>%</th>
+													<th>Bid</th>
+													<th>Ask</th>
+													<th>%</th>
+													<th>Volume</th>
+													<th>Updated</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr data-ng-repeat="market in btc.markets">
+													<td>{{ market.name }}</td>
+													<td> <span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></span></td>
+													<td>{{ market.bid | currency:"$":2 }}</td>
+													<td>{{ market.ask | currency:"$":2 }}</td>
+													<td> <span ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></span></td>
+													<td>{{ market.volume | number:2 }} </td>
+													<td>{{ market.updated | date:'HH:mm:ss' }}</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
 							<!--end:: Exchange Performance-->
 						</div>
 					</div>
@@ -619,43 +619,43 @@
 								<div class="m-portlet__body">
 									<!--begin: Datatable -->
 									<div class="table-responsive">
-	                  <table class="table table-bordered table-hover table-striped">
-	                    <thead>
-	                      <tr>
-	                        <th>Exchange</th>
-	                        <th>Orders</th>
-	                        <th>Fill</th>
-	                        <th>Buy / Sell</th>
-	                        <th>USD</th>
-	                        <th>BTC</th>
-	                        <th>Avg Buy</th>
-	                        <th>Avg Sell</th>
-	                      </tr>
-	                    </thead>
-	                    <tbody>
-	                      <tr data-ng-repeat="exchange in trades.exchanges">
-	                        <td> {{ exchange.name }}</td>
-	                        <td> {{ exchange.total | number:0 }} </td>
-	                        <td> {{ exchange.success * 100 | number:2 }}% </td>
-	                        <td> {{ exchange.buy_orders | number:0 }} / {{ exchange.sell_orders | number:0 }}</td>
-	                        <td> {{ exchange.usd | currency:"$":0 }} </td>
-	                        <td> {{ exchange.btc | number:0 }}</td>
-	                        <td> {{ exchange.avg_buy | currency:"$":0 }} </td>
-	                        <td> {{ exchange.avg_sell | currency:"$":0 }}</td>
-	                      </tr>
-	                      <tr data-ng-repeat="stat in trades.stats">
-	                        <td> Totals</td>
-	                        <td> {{ stat.total | number:0 }} </td>
-	                        <td> {{ stat.success * 100 | number:2 }}% </td>
-	                        <td> {{ stat.buy_orders | number:0 }} / {{ stat.sell_orders | number:0 }}</td>
-	                        <td> <span class="m-badge  m-badge--primary m-badge--wide">{{ stat.usd | currency:"$":0 }}</span> </td>
-	                        <td> <span class="m-badge  m-badge--brand m-badge--wide">{{ stat.btc | number:0 }}</span></td>
-	                        <td> {{ stat.avg_buy | currency:"$":0 }} </td>
-	                        <td> {{ stat.avg_sell | currency:"$":0 }}</td>
-	                      </tr>
-	                    </tbody>
-	                  </table>
-	                </div>
+										<table class="table table-bordered table-hover table-striped">
+											<thead>
+												<tr>
+													<th>Exchange</th>
+													<th>Orders</th>
+													<th>Fill</th>
+													<th>Buy / Sell</th>
+													<th>USD</th>
+													<th>BTC</th>
+													<th>Avg Buy</th>
+													<th>Avg Sell</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr data-ng-repeat="exchange in trades.exchanges">
+													<td> {{ exchange.name }}</td>
+													<td> {{ exchange.total | number:0 }} </td>
+													<td> {{ exchange.success * 100 | number:2 }}% </td>
+													<td> {{ exchange.buy_orders | number:0 }} / {{ exchange.sell_orders | number:0 }}</td>
+													<td> {{ exchange.usd | currency:"$":0 }} </td>
+													<td> {{ exchange.btc | number:0 }}</td>
+													<td> {{ exchange.avg_buy | currency:"$":0 }} </td>
+													<td> {{ exchange.avg_sell | currency:"$":0 }}</td>
+												</tr>
+												<tr data-ng-repeat="stat in trades.stats">
+													<td> Totals</td>
+													<td> {{ stat.total | number:0 }} </td>
+													<td> {{ stat.success * 100 | number:2 }}% </td>
+													<td> {{ stat.buy_orders | number:0 }} / {{ stat.sell_orders | number:0 }}</td>
+													<td> <span class="m-badge  m-badge--primary m-badge--wide">{{ stat.usd | currency:"$":0 }}</span> </td>
+													<td> <span class="m-badge  m-badge--brand m-badge--wide">{{ stat.btc | number:0 }}</span></td>
+													<td> {{ stat.avg_buy | currency:"$":0 }} </td>
+													<td> {{ stat.avg_sell | currency:"$":0 }}</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 									<!--end: Datatable -->
 								</div>
 							</div>
