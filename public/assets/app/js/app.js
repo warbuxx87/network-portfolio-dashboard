@@ -131,6 +131,8 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				// Hide loading spinner whether our call succeeded or failed.
 				$scope.loading = false;
 			});
+
+			$scope.customer = {"name": "test_name", "address":"test_address"};
 	};
 
 	$scope.getClass = function(value) {
@@ -171,4 +173,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 			}
 		});
 	}]);
-}]);
+}]).directive('header', function() {
+  return {
+    restrict: 'E', // only matches element name
+		replace: false,
+    templateUrl: '/partials/header.html'
+  };
+});

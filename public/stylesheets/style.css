@@ -1,8 +1,11 @@
 header li svg {
     width: 20px;
     height: auto;
-    fill: #73689c;
+    fill: #918db7;
 }
 header li:hover svg {
+    fill: #676a8a;
+}
+header li.m-menu__item--active svg {
     fill: #676a8a;
 }
