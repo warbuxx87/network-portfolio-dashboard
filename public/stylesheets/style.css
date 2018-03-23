@@ -1,8 +1,11 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+header li svg {
+    width: 20px;
+    height: auto;
+    fill: #918db7;
 }
-
-a {
-  color: #00B7FF;
+header li:hover svg {
+    fill: #676a8a;
+}
+header li.m-menu__item--active svg {
+    fill: #676a8a;
 }
