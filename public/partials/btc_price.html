@@ -18,21 +18,21 @@
       </span>
       <div class="m-separator m-separator--space m-separator--dashed m-separator--lg"></div>
       <div class="table-responsive m-scrollable mCustomScrollbar _mCS_3 mCS-autoHide" data-scrollbar-shown="true" data-scrollable="true" data-max-height="250">
-        <table class="table table-striped m-table m-table--head-bg-brand">
+        <table class="table table-striped m-table">
           <thead>
             <tr>
               <th>Exchange</th>
-              <th>Bid</th>
-              <th>Ask</th>
+              <th>Last Price</th>
               <th>Volume</th>
+              <th>Updated</th>
             </tr>
           </thead>
           <tbody>
             <tr data-ng-repeat="market in btc.markets">
               <td>{{ market.name }}</td>
-              <td>{{ market.bid | currency:"$":2 }}</td>
-              <td>{{ market.ask | currency:"$":2 }}</td>
-              <td>{{ market.volume | number:2 }} </td>
+              <td>{{ market.last | currency:"$":2 }}</td>
+              <td>{{ market.volume | number:2 }}</td>
+              <td>{{ market.updated | date:'HH:mm:ss' }}</td>
             </tr>
           </tbody>
         </table>

@@ -1,3 +1,10 @@
+/***
+ * Title: Alkemi custom styling.
+ *
+ * Author: Alex Bath
+ * Date: March, 2018
+***/
+
 header li svg {
     width: 20px;
     height: auto;
@@ -8,4 +15,21 @@ header li:hover svg {
 }
 header li.m-menu__item--active svg {
     fill: #676a8a;
+}
+/*
+* Overwritten from base styling of Metronic to use Alkemi's colours.
+*/
+.m-portlet.m-portlet--primary.m-portlet--head-solid-bg {
+  background: #568ca8;
+  border-color: #568ca8; }
+  .m-portlet.m-portlet--primary.m-portlet--head-solid-bg .m-portlet__head {
+    background-color: #568ca8;
+    border-color: #568ca8; }
+
+
+/*
+* Added to create full-width badges inside tables.
+*/
+.m-badge--fullwidth {
+  width: 100%;
 }
