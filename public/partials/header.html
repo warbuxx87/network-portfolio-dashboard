@@ -38,7 +38,7 @@
           </button>
         <div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-dark m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light ">
           <ul class="m-menu__nav m-menu__nav--submenu-arrow ">
-            <li class="m-menu__item" aria-haspopup="true">
+            <li class="m-menu__item {{path.split('/')[3] == '' ? 'm-menu__item m-menu__item--active' : ''}}" aria-haspopup="true">
               <a href="/" class="m-menu__link ">
                   <i class="m-menu__link-icon flaticon-analytics"></i>
                   <span class="m-menu__link-text">
@@ -46,7 +46,7 @@
                   </span>
                 </a>
             </li>
-            <li class="m-menu__item m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
+            <li class="m-menu__item m-menu__item--submenu m-menu__item--rel {{path.includes('coin/btc') ? 'm-menu__item m-menu__item--active' : ''}}"  data-menu-submenu-toggle="click" aria-haspopup="true">
               <a href="/btcusd" class="m-menu__link m-menu__toggle">
                   <i class="m-menu__link-icon">
                     <ng-include
@@ -99,7 +99,7 @@
                 </ul>
               </div>
             </li>
-            <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
+            <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel {{path.includes('coin/eth') ? 'm-menu__item m-menu__item--active' : ''}}" data-menu-submenu-toggle="click" aria-haspopup="true">
               <a href="#" class="m-menu__link m-menu__toggle">
                   <i class="m-menu__link-icon">
                     <ng-include
@@ -151,7 +151,7 @@
                 </ul>
               </div>
             </li>
-            <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
+            <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel {{path.includes('coin/ltc') ? 'm-menu__item m-menu__item--active' : ''}}" data-menu-submenu-toggle="click" aria-haspopup="true">
               <a href="#" class="m-menu__link m-menu__toggle">
                   <i class="m-menu__link-icon">
                     <ng-include
@@ -227,7 +227,7 @@
             </li>
 
             <!-- Exchanges -->
-            <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
+            <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel  {{path.includes('exchanges') ? 'm-menu__item m-menu__item--active' : ''}}" data-menu-submenu-toggle="click" aria-haspopup="true">
               <a href="#" class="m-menu__link m-menu__toggle">
                   <i class="m-menu__link-icon flaticon-interface-6"></i>
                   <span class="m-menu__link-text">
@@ -256,7 +256,7 @@
             <!-- End Exchanges -->
 
             <!-- Routes -->
-            <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
+            <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel {{path.includes('routes') ? 'm-menu__item m-menu__item--active' : ''}}" data-menu-submenu-toggle="click" aria-haspopup="true">
               <a href="#" class="m-menu__link m-menu__toggle">
                   <i class="m-menu__link-icon flaticon-route"></i>
                   <span class="m-menu__link-text">
