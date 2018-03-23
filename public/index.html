@@ -13,14 +13,14 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114448847-1"></script>
 	<script>
-		window.dataLayer = window.dataLayer || [];
+	window.dataLayer = window.dataLayer || [];
 
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
 
-		gtag('config', 'UA-114448847-1');
+	gtag('config', 'UA-114448847-1');
 	</script>
 	<!--  END Google Analytics -->
 	<script src="assets/app/js/angular.min.js"></script>
@@ -34,14 +34,14 @@
 	<!--begin::Web font -->
 	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
 	<script>
-		WebFont.load({
-			google: {
-				"families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]
-			},
-			active: function() {
-				sessionStorage.fonts = true;
-			}
-		});
+	WebFont.load({
+		google: {
+			"families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]
+		},
+		active: function() {
+			sessionStorage.fonts = true;
+		}
+	});
 	</script>
 	<!--end::Web font -->
 	<!--begin::Base Styles -->
@@ -75,7 +75,7 @@
 	<!-- begin:: Page -->
 	<div class="m-grid m-grid--hor m-grid--root m-page">
 		<!-- begin::Header -->
-  	<header class="m-grid__item		m-header " data-minimize="minimize" data-minimize-offset="200" data-minimize-mobile-offset="200"></header>
+		<header class="m-grid__item		m-header " data-minimize="minimize" data-minimize-offset="200" data-minimize-mobile-offset="200"></header>
 		<!-- end::Header -->
 		<!-- begin::Body -->
 		<div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-grid--desktop 	m-container m-container--responsive m-container--xxl m-page__container m-body">
@@ -85,18 +85,18 @@
 					<div class="d-flex align-items-center">
 						<div class="mr-auto">
 							<h3 class="m-subheader__title ">
-									Dashboard
-								</h3>
+								Dashboard
+							</h3>
 						</div>
 						<div>
 							<span class="m-subheader__daterange" id="m_dashboard_daterangepicker">
-									<span class="m-subheader__daterange-label">
-										<span class="m-subheader__daterange-title"></span>
-							<span class="m-subheader__daterange-date m--font-total"></span>
-							</span>
-							<a href="#" class="btn btn-sm btn-brand m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill">
-										<i class="la la-angle-down"></i>
-									</a>
+								<span class="m-subheader__daterange-label">
+									<span class="m-subheader__daterange-title"></span>
+									<span class="m-subheader__daterange-date m--font-total"></span>
+								</span>
+								<a href="#" class="btn btn-sm btn-brand m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--pill">
+									<i class="la la-angle-down"></i>
+								</a>
 							</span>
 						</div>
 					</div>
@@ -109,30 +109,7 @@
 					<div class="row">
 						<div class="col-xl-5">
 							<!--begin:: Overall Performance-->
-							<div class="m-portlet m-portlet--space  m-portlet--rounded m-portlet--smallmargin">
-								<div class="m-portlet__head">
-									<div class="m-portlet__head-caption">
-										<div class="m-portlet__head-title">
-											<h3 class="m-portlet__head-text">
-												Bitcoin Price
-								<span class="m-portlet__head-desc">
-
-								</span>
-							</h3>
-										</div>
-									</div>
-								</div>
-								<div class="m-portlet__body">
-									<div class="m-widget25">
-										<span ng-bind="btc.idx | currency:'$':2" class="m-widget25__price m--font-total">
-							        Loading ...
-										</span>
-										<div class="m-widget25__desc">
-											Volume Weighted Average Price
-										</div>
-									</div>
-								</div>
-							</div>
+							<div ng-include src="'partials/btc_price.html'" include-replace></div>
 							<div class="row">
 								<div class="col-xl-6 halfpad_right">
 									<!--begin:: Widgets/Total_trades-->
@@ -180,17 +157,17 @@
 						</div>
 						<!--end:: Overall Performance-->
 						<div class="col-xl-7">
-							<!--begin:: Exchange Performance-->
-							<div class="m-portlet m-portlet--accent m-portlet--head-solid-bg m-portlet--head-sm" data-portlet="true" id="m_portlet_tools_1">
-								<div class="m-portlet__head m-brand" style="background-color: #568ca7;">
+							<!--begin:: Market Overview -->
+							<div class="m-portlet m-portlet--brand m-portlet--head-solid-bg" data-portlet="true" id="m_portlet_tools_1">
+								<div class="m-portlet__head">
 									<div class="m-portlet__head-caption">
 										<div class="m-portlet__head-title">
 											<span class="m-portlet__head-icon">
-														<i class="flaticon-diagram"></i>
-													</span>
+												<i class="flaticon-diagram"></i>
+											</span>
 											<h3 class="m-portlet__head-text">
-														Market Overview
-													</h3>
+												Market Overview
+											</h3>
 										</div>
 									</div>
 									<div class="m-portlet__head-tools">
@@ -205,27 +182,31 @@
 									</div>
 								</div>
 								<div class="m-portlet__body">
+									<h6>
+								    An overview of Bitcoin price divergence across several exchanges.
+										<br/>
+								    <small class="text-muted">Each exchange price measured against Bitcoin VWAP (Volume Weighted Average Price)</small>
+								  </h6>
+									<div class="m-separator m-separator--space m-separator--dashed m-separator--lg"></div>
 									<div class="table-responsive">
-										<table class="table table-bordered table-hover table-striped">
+										<table class="table table-striped">
 											<thead>
 												<tr>
 													<th>Exchange</th>
-													<th>%</th>
 													<th>Bid</th>
+													<th>Bid % Difference</th>
 													<th>Ask</th>
-													<th>%</th>
-													<th>Volume</th>
+													<th>Ask % Difference</th>
 													<th>Updated</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr data-ng-repeat="market in btc.markets">
 													<td>{{ market.name }}</td>
-													<td> <span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></span></td>
 													<td>{{ market.bid | currency:"$":2 }}</td>
-													<td>{{ market.ask | currency:"$":2 }}</td>
 													<td> <span ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></span></td>
-													<td>{{ market.volume | number:2 }} </td>
+													<td>{{ market.ask | currency:"$":2 }}</td>
+													<td> <span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></span></td>
 													<td>{{ market.updated | date:'HH:mm:ss' }}</td>
 												</tr>
 											</tbody>
@@ -233,7 +214,7 @@
 									</div>
 								</div>
 							</div>
-							<!--end:: Exchange Performance-->
+							<!--end:: Market Overview-->
 						</div>
 					</div>
 					<!--End::Section-->
@@ -316,24 +297,24 @@
 									<div class="m-portlet__head-caption">
 										<div class="m-portlet__head-title">
 											<h3 class="m-portlet__head-text">
-								  Opportunity
-								<span class="m-portlet__head-desc">
-							    Arbitrage Strategy
-								</span>
+												Opportunity
+												<span class="m-portlet__head-desc">
+													Arbitrage Strategy
+												</span>
 
-							</h3>
+											</h3>
 										</div>
 									</div>
 									<div class="col m--align-right" ng-show="btc.margin">
 										<span ng-bind="btc.margin | number:2" class="m-widget1__roi">
-					           Loading
-									 </span><span class="m-widget1__roi">%</span>
+											Loading
+										</span><span class="m-widget1__roi">%</span>
 									</div>
 									<!-- loads this div when no opportunity available -->
 									<div class="col m--align-right" ng-hide="btc.margin">
 										<span class="m-widget1__roi">
-								0.00%
-							</span>
+											0.00%
+										</span>
 									</div>
 
 								</div>
@@ -377,9 +358,9 @@
 									<div class="m-portlet__head-caption">
 										<div class="m-portlet__head-title">
 											<h3 class="m-portlet__head-text">
-													Successful Trades
+												Successful Trades
 												<span class="m-portlet__head-desc">
-											    Confirmed Trades
+													Confirmed Trades
 												</span>
 											</h3>
 										</div>
@@ -404,8 +385,8 @@
 					<div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
 						<div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
 							<span class="m-footer__copyright">
-									2018 &copy; <a href="https://alkemi.ai" target="_blank">Alkemi AI Inc.</a>
-								</span>
+								2018 &copy; <a href="https://alkemi.ai" target="_blank">Alkemi AI Inc.</a>
+							</span>
 						</div>
 					</div>
 				</div>
