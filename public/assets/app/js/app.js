@@ -136,8 +136,6 @@ app.controller('MainCtrl', ['$http', '$scope', '$location',
 				// Hide loading spinner whether our call succeeded or failed.
 				$scope.loading = false;
 			});
-
-			$scope.customer = {"name": "test_name", "address":"test_address"};
 	};
 
 	$scope.getClass = function(value) {
@@ -148,8 +146,12 @@ app.controller('MainCtrl', ['$http', '$scope', '$location',
 			return "m--font-bold m--font-danger";
 		}
 		if ((typeof value) == "string") return "";
-		if (value == 0) return "";
-		return value > 0 ? 'green' : 'red';
+		if (value == 0) return "m-badge m-badge--metal m-badge--wide m-badge--rounded";
+		if (value > 0) {
+		    return "m-badge m-badge--primary m-badge--wide m-badge--rounded";
+		} else {
+		    return "m-badge m-badge--danger m-badge--wide m-badge--rounded";
+		}
 	};
 
 	var d = new Date();

@@ -534,9 +534,15 @@
 						</div>
 						<!--end:: Overall Performance-->
 						<div class="col-xl-7">
+<<<<<<< HEAD
 							<!--begin:: Exchange Performance-->
 							<div class="m-portlet m-portlet--accent m-portlet--head-solid-bg m-portlet--head-sm" data-portlet="true" id="m_portlet_tools_1">
 								<div class="m-portlet__head m-brand" style="background-color: #568ca7;">
+=======
+							<!--begin:: Market Overview -->
+							<div class="m-portlet m-portlet--primary m-portlet--head-solid-bg" data-portlet="true" id="m_portlet_tools_1">
+								<div class="m-portlet__head">
+>>>>>>> 10cc5bcefad8948ea8d317cf149ff61d91f85f61
 									<div class="m-portlet__head-caption">
 										<div class="m-portlet__head-title">
 											<span class="m-portlet__head-icon">
@@ -559,6 +565,15 @@
 									</div>
 								</div>
 								<div class="m-portlet__body">
+<<<<<<< HEAD
+=======
+									<h6>
+								    An overview of Bitcoin price divergence across several exchanges.
+										<br/>
+								    <small class="text-muted">Each exchange price measured against Bitcoin VWAP (Volume Weighted Average Price).</small>
+								  </h6>
+									<div class="m-separator m-separator--space m-separator--dashed m-separator--lg"></div>
+>>>>>>> 10cc5bcefad8948ea8d317cf149ff61d91f85f61
 									<div class="table-responsive">
 										<table class="table table-bordered table-hover table-striped">
 											<thead>
@@ -577,9 +592,15 @@
 													<td>{{ market.name }}</td>
 													<td> <span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></span></td>
 													<td>{{ market.bid | currency:"$":2 }}</td>
+<<<<<<< HEAD
 													<td>{{ market.ask | currency:"$":2 }}</td>
 													<td> <span ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></span></td>
 													<td>{{ market.volume | number:2 }} </td>
+=======
+													<td><span ng-class="getClass(market.sell_take)" class="m-badge--fullwidth"><b>{{ market.sell_take | number:2 }}%</b></span></td>
+													<td>{{ market.ask | currency:"$":2 }}</td>
+													<td><span ng-class="getClass(market.buy_take)" class="m-badge--fullwidth"><b>{{ market.buy_take | number:2 }}%</b></span></td>
+>>>>>>> 10cc5bcefad8948ea8d317cf149ff61d91f85f61
 													<td>{{ market.updated | date:'HH:mm:ss' }}</td>
 												</tr>
 											</tbody>
@@ -593,10 +614,10 @@
 					<!--End::Section-->
 					<!--Start::Section-->
 					<div class="row">
-						<div class="col-xl-7">
+						<div class="col-xl-8">
 							<!--begin:: Exchange Last Order-->
-							<div class="m-portlet m-portlet--accent m-portlet--head-solid-bg m-portlet--head-sm" data-portlet="true" id="m_portlet_tools_2">
-								<div class="m-portlet__head m-brand" style="background-color: #7b71a1;">
+							<div class="m-portlet m-portlet--primary m-portlet--head-solid-bg" data-portlet="true" id="m_portlet_tools_2">
+								<div class="m-portlet__head">
 									<div class="m-portlet__head-caption">
 										<div class="m-portlet__head-title">
 											<span class="m-portlet__head-icon">
@@ -619,17 +640,22 @@
 									</div>
 								</div>
 								<div class="m-portlet__body">
+									<h6>
+										An overview of Alkemi arbitrage performance across various exchanges.
+									</h6>
+									<div class="m-separator m-separator--space m-separator--dashed m-separator--lg"></div>
 									<!--begin: Datatable -->
 									<div class="table-responsive">
-										<table class="table table-bordered table-hover table-striped">
+										<table class="table table-striped">
 											<thead>
 												<tr>
 													<th>Exchange</th>
-													<th>Orders</th>
-													<th>Fill</th>
-													<th>Buy / Sell</th>
-													<th>USD</th>
-													<th>BTC</th>
+													<th>Total Orders</th>
+													<th>Fill Rate</th>
+													<th>BTC Bought</th>
+													<th>BTC Sold</th>
+													<th>USD Returns</th>
+													<th>BTC Returns</th>
 													<th>Avg Buy</th>
 													<th>Avg Sell</th>
 												</tr>
@@ -639,7 +665,8 @@
 													<td> {{ exchange.name }}</td>
 													<td> {{ exchange.total | number:0 }} </td>
 													<td> {{ exchange.success * 100 | number:2 }}% </td>
-													<td> {{ exchange.buy_orders | number:0 }} / {{ exchange.sell_orders | number:0 }}</td>
+													<td> {{ exchange.buy_orders | number:0 }} </td>
+													<td> {{ exchange.sell_orders | number:0 }} </td>
 													<td> {{ exchange.usd | currency:"$":0 }} </td>
 													<td> {{ exchange.btc | number:0 }}</td>
 													<td> {{ exchange.avg_buy | currency:"$":0 }} </td>
@@ -649,9 +676,10 @@
 													<td> Totals</td>
 													<td> {{ stat.total | number:0 }} </td>
 													<td> {{ stat.success * 100 | number:2 }}% </td>
-													<td> {{ stat.buy_orders | number:0 }} / {{ stat.sell_orders | number:0 }}</td>
-													<td> <span class="m-badge  m-badge--primary m-badge--wide">{{ stat.usd | currency:"$":0 }}</span> </td>
-													<td> <span class="m-badge  m-badge--brand m-badge--wide">{{ stat.btc | number:0 }}</span></td>
+													<td> {{ stat.buy_orders | number:0 }} </td>
+													<td> {{ stat.sell_orders | number:0 }} </td>
+													<td> <span class="m-badge  m-badge--primary m-badge--wide m-badge--fullwidth m-badge--rounded">{{ stat.usd | currency:"$":0 }}</span> </td>
+													<td> <span class="m-badge  m-badge--brand m-badge--wide m-badge--fullwidth m-badge--rounded">{{ stat.btc | number:0 }}</span></td>
 													<td> {{ stat.avg_buy | currency:"$":0 }} </td>
 													<td> {{ stat.avg_sell | currency:"$":0 }}</td>
 												</tr>
@@ -663,7 +691,7 @@
 							</div>
 							<!--End:: Exchange Last Order-->
 						</div>
-						<div class="col-xl-5">
+						<div class="col-xl-4">
 							<!--begin:: Arbitrage Opportunity-->
 							<div class="m-portlet m-portlet--space  m-portlet--rounded m-portlet--smallmargin">
 								<div class="m-portlet__head">
