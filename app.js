@@ -1,10 +1,12 @@
-var express = require('express');
-var path = require('path');
-var fs = require('fs');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const cryptoSocket = require("crypto-socket");
+
 
 var index = require('./routes/index');
 var coin = require('./routes/coin');
