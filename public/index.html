@@ -195,25 +195,20 @@
 											<thead>
 												<tr>
 													<th>Exchange</th>
-													<th>%</th>
 													<th>Bid</th>
+													<th>Bid % Difference</th>
 													<th>Ask</th>
-													<th>%</th>
-													<th>Volume</th>
+													<th>Ask % Difference</th>
 													<th>Updated</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr data-ng-repeat="market in btc.markets">
 													<td>{{ market.name }}</td>
-													<td> <span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></span></td>
 													<td>{{ market.bid | currency:"$":2 }}</td>
-													<td>{{ market.ask | currency:"$":2 }}</td>
 													<td> <span ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></span></td>
-													<td>{{ market.volume | number:2 }} </td>
-													<td><span ng-class="getClass(market.sell_take)" class="m-badge--fullwidth"><b>{{ market.sell_take | number:2 }}%</b></span></td>
 													<td>{{ market.ask | currency:"$":2 }}</td>
-													<td><span ng-class="getClass(market.buy_take)" class="m-badge--fullwidth"><b>{{ market.buy_take | number:2 }}%</b></span></td>
+													<td><span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></span></td>	
 													<td>{{ market.updated | date:'HH:mm:ss' }}</td>
 												</tr>
 											</tbody>
