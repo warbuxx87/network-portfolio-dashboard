@@ -9,11 +9,13 @@
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
+    "crypto-socket": "^3.0.0",
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "jade": "~1.11.0",
     "mocha": "^5.0.4",
     "morgan": "~1.9.0",
+    "npm": "^5.7.1",
     "pug": "^2.0.1",
     "serve-favicon": "~2.4.5"
   }

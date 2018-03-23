@@ -9,4 +9,4 @@ router.get('/', function(req, res, next) {
 	res.send(ethusd);
 });
 
-module.exports = router;;
+module.exports = router;

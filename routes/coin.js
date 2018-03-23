@@ -23,4 +23,4 @@ router.get('/btc/eur', function(req, res, next) {
 	res.send(btceur);
 });
 
-module.exports = router;;
+module.exports = router;
