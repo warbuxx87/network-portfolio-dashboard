@@ -240,7 +240,7 @@
                 <span class="m-menu__arrow m-menu__arrow--adjust"></span>
                 <ul class="m-menu__subnav">
                   <li data-ng-repeat="exchange in trades.exchanges | orderBy: '-updated' " class="m-menu__item " aria-haspopup="true">
-                    <a href="/exchanges/{{ exchange.name }}" class="m-menu__link ">
+                    <a href="/exchanges/{{ exchange.name | lowercase }}" class="m-menu__link ">
                         <span class="m-menu__link-title">
                           <span class="m-menu__link-wrap">
                             <span class="m-menu__link-text">
