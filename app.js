@@ -11,6 +11,7 @@ const cryptoSocket = require("crypto-socket");
 var index = require('./routes/index');
 var coin = require('./routes/coin');
 var users = require('./routes/users');
+var exchanges = require('./routes/exchange');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/coin', coin);
 app.use('/users', users);
+app.use('/exchanges', exchanges);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
