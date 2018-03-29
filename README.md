@@ -5,14 +5,16 @@ This README would normally document whatever steps are necessary to get your app
 ### What is this repository for? ###
 
 * Quick summary
+
 * Version
+
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### How do I get set up? ###
 
 * Summary of set up
 ```
-git clone 'https://user@bitbucket.org/project-alkemi/arbitrage-performance-monitor.git'
+git clone 'https://user@bitbucket.org/project-alkemi/app.alkemi.ai.git'
 ```
 * Configuration
 
@@ -20,7 +22,6 @@ git clone 'https://user@bitbucket.org/project-alkemi/arbitrage-performance-monit
 ```
 npm install
 ```
-* Database configuration
 
 * How to run tests
 ```
@@ -31,7 +32,7 @@ npm test
 ```
 
 cd arbitrage-performance-monitor
-npm start 
+npm start
 ```
 
 ### Contribution guidelines ###
@@ -42,5 +43,4 @@ npm start
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+* Alkemi AI Inc.
