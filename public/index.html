@@ -208,7 +208,7 @@
 													<td>{{ market.bid | currency:"$":2 }}</td>
 													<td> <span ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></span></td>
 													<td>{{ market.ask | currency:"$":2 }}</td>
-													<td><span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></span></td>	
+													<td><span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></span></td>
 													<td>{{ market.updated | date:'HH:mm:ss' }}</td>
 												</tr>
 											</tbody>
@@ -295,6 +295,35 @@
 										</table>
 									</div>
 									<!--end: Datatable -->
+									<div class="m-separator m-separator--space m-separator--dashed m-separator--lg"></div>
+									<!--begin: NET Returns -->
+									<div class="row">
+										<h4 class="text-center full-width-20">NET Returns</h4>
+										<div class="col-xl-6">
+											<div class="m-portlet  m-portlet--fit" style="min-height: 60px">
+												<div class="m-portlet__body" style="background-color: #568ca7; border-radius: 2px; padding: 10px">
+													<div ng-bind="trades.stats[0].usd + trades.stats[0].btc*btc.idx | currency:'$':2" class="buy_ticker">
+														Loading
+													</div>
+													<div class="exchange_buy">
+														NET USD Returns
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-6">
+											<div class="m-portlet m-portlet--fit" style="min-height: 60px">
+												<div class="m-portlet__body" style="background-color: #7b71a1; border-radius: 2px; padding: 10px">
+													<div ng-bind="trades.stats[0].btc + trades.stats[0].usd/btc.idx | currency:'':0" class="sell_ticker">
+														Loading
+													</div>
+													<div class="exchange_sell">
+														NET BTC Returns
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<!--End:: Exchange Last Order-->

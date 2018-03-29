@@ -5,6 +5,10 @@
  * Date: March, 2018
 ***/
 
+
+/*
+* Make header svg icons the correct color given element states
+*/
 header li svg {
     width: 20px;
     height: auto;
@@ -32,4 +36,13 @@ header li.m-menu__item--active svg {
 */
 .m-badge--fullwidth {
   width: 100%;
+}
+
+/*
+* Allow headers to be block elements.
+*/
+.full-width-20 {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
 }
