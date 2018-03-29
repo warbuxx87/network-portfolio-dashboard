@@ -8,13 +8,13 @@ describe('Array', function() {
 });
 
 
-cryptoSocket = require("crypto-socket");
+//cryptoSocket = require("crypto-socket");
 
-cryptoSocket.start();
+//cryptoSocket.start();
 
-setInterval(
+/*setInterval(
   function(){
             cryptoSocket.echoExchange()
-                
+
   },1000
-);
+);*/
