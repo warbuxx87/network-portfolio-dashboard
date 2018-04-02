@@ -180,10 +180,12 @@ app.controller('MainCtrl', ['$http', '$scope', '$location',
 			}
 		});
 	}]);
-}]).directive('header', function() {
+}]);/*
+ Commented out by Alex Bath until bugfixed.
+.directive('header', function() {
   return {
     restrict: 'E', // only matches element name
 		replace: false,
     templateUrl: '/partials/header.html'
   };
-});
+});*/
