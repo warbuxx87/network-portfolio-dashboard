@@ -709,9 +709,9 @@
 										</div>
 									</div>
 									<div class="col m--align-right" ng-show="btc.margin">
-										<span ng-bind="btc.margin | number:2" class="m-widget1__roi">
-					           Loading
-									 </span><span class="m-widget1__roi">%</span>
+										<span ng-bind="btc.margin | percentage:2" class="m-widget1__roi">
+					           Loading ...
+									 </span>
 									</div>
 									<!-- loads this div when no opportunity available -->
 									<div class="col m--align-right" ng-hide="btc.margin">
