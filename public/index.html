@@ -485,7 +485,7 @@
 											<!--begin::Widget5-->
 											<div class="m-widget20">
 												<div ng-bind="btc.total_volume | number:0" class="m-widget20__number m--font-success">
-													Loading
+													Loading ...
 												</div>
 												<div class="m-widget25__desc_small">
 													24 HR Exchange Volume
@@ -505,7 +505,7 @@
 										<div class="m-portlet__body">
 											<!--begin::Widget5-->
 											<div class="m-widget20">
-												<div id="index-change" class="m-widget20__number m--font-success">
+												<div ng-bind="btc.daily | number:2" class="m-widget20__number m--font-success">
 													Loading ...
 												</div>
 												<div class="m-widget25__desc_small">
