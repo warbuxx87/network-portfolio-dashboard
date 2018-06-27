@@ -571,9 +571,9 @@
 												<tr data-ng-repeat="market in btc.markets">
 													<td>{{ market.name }}</td>
 													<td>{{ market.bid | currency:"$":2 }}</td>
-													<td> <span ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></span></td>
+													<td> <span ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | percentage:2 }}</b></span></td>
 													<td>{{ market.ask | currency:"$":2 }}</td>
-													<td><span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></span></td>
+													<td><span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | percentage:2 }}</b></span></td>
 													<td>{{ market.updated | date:'HH:mm:ss' }}</td>
 												</tr>
 											</tbody>
@@ -637,7 +637,7 @@
 												<tr data-ng-repeat="exchange in trades.exchanges">
 													<td> {{ exchange.name }}</td>
 													<td> {{ exchange.total | number:0 }} </td>
-													<td> {{ exchange.success * 100 | number:2 }}% </td>
+													<td> {{ exchange.success * 100 | percentage:2 }} </td>
 													<td> {{ exchange.buy_orders | number:0 }} </td>
 													<td> {{ exchange.sell_orders | number:0 }} </td>
 													<td> {{ exchange.usd | currency:"$":0 }} </td>
@@ -648,7 +648,7 @@
 												<tr data-ng-repeat="stat in trades.stats">
 													<td> Totals</td>
 													<td> {{ stat.total | number:0 }} </td>
-													<td> {{ stat.success * 100 | number:2 }}% </td>
+													<td> {{ stat.success * 100 | percentage:2 }} </td>
 													<td> {{ stat.buy_orders | number:0 }} </td>
 													<td> {{ stat.sell_orders | number:0 }} </td>
 													<td> <span class="m-badge  m-badge--primary m-badge--wide m-badge--fullwidth m-badge--rounded">{{ stat.usd | currency:"$":0 }}</span> </td>
@@ -709,7 +709,7 @@
 										</div>
 									</div>
 									<div class="col m--align-right" ng-show="btc.margin">
-										<span ng-bind="btc.margin | percentage:2" class="m-widget1__roi">
+										<span ng-bind="btc.margin * 100 | percentage:2" class="m-widget1__roi">
 					           Loading ...
 									 </span>
 									</div>
