@@ -571,9 +571,9 @@
 												<tr data-ng-repeat="market in btc.markets">
 													<td>{{ market.name }}</td>
 													<td>{{ market.bid | currency:"$":2 }}</td>
-													<td> <span ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | percentage:0 }}</b></span></td>
+													<td> <span ng-class="getClass(market.sell_take)"><b>{{ market.sell_take * .01 | percentage:2 }}</b></span></td>
 													<td>{{ market.ask | currency:"$":2 }}</td>
-													<td><span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | percentage:0 }}</b></span></td>
+													<td><span ng-class="getClass(market.buy_take)"><b>{{ market.buy_take * .01 | percentage:2 }}</b></span></td>
 													<td>{{ market.updated | date:'HH:mm:ss' }}</td>
 												</tr>
 											</tbody>
@@ -709,7 +709,7 @@
 										</div>
 									</div>
 									<div class="col m--align-right" ng-show="btc.margin">
-										<span ng-bind="btc.margin | percentage:0" class="m-widget1__roi">
+										<span ng-bind="btc.margin * .01 | percentage:2" class="m-widget1__roi">
 					           Loading ...
 									 </span>
 									</div>
