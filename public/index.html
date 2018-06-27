@@ -505,11 +505,11 @@
 										<div class="m-portlet__body">
 											<!--begin::Widget5-->
 											<div class="m-widget20">
-												<div ng-bind="btc.daily | number:2" class="m-widget20__number m--font-success">
+												<div ng-bind="btc.daily | percentage:2" class="m-widget20__number m--font-success">
 													Loading ...
 												</div>
 												<div class="m-widget25__desc_small">
-													24 Hour Change
+													24 Hour Price Change
 												</div>
 												<div class="m-widget20__chart" style="height:160px;">
 													<canvas id="m_chart_trade2"></canvas>
