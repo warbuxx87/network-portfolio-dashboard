@@ -16,7 +16,7 @@ var DatatableChildRemoteDataBot = function() {
 						method: 'GET',
 					},
 				},
-				pageSize: 10, // display 10 records per page
+				pageSize: 7, // display 7 records per page
 				//serverPaging: false,
 				//serverFiltering: false,
 				//serverSorting: false,
