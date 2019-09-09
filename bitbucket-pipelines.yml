@@ -1,0 +1,49 @@
+image:                               atlassian/default-image:2
+
+pipelines:
+  default:
+    - step:
+        name:                        "Build and Test"
+        script:
+          - echo "Build, Upload and Test!"
+          - zip -r application.zip Dockerfile README.md app.js package.json .dockerignore bin public routes test views
+          - pipe:                    atlassian/aws-elasticbeanstalk-deploy:0.2.3
+            variables:
+              AWS_ACCESS_KEY_ID:     $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              AWS_DEFAULT_REGION:    $AWS_DEFAULT_REGION
+              APPLICATION_NAME:      'alkemi.fund'
+              COMMAND:               'upload-only'
+              ZIP_FILE:              'application.zip'
+              VERSION_LABEL:         'btc-index-$BITBUCKET_BUILD_NUMBER'
+    - step:
+        name:                        "Deploy to Staging"
+        deployment:                  staging
+        script:
+        - echo "Deployment!"
+        - pipe:                      atlassian/aws-elasticbeanstalk-deploy:0.2.3
+          variables:
+            AWS_ACCESS_KEY_ID:       $AWS_ACCESS_KEY_ID
+            AWS_SECRET_ACCESS_KEY:   $AWS_SECRET_ACCESS_KEY
+            AWS_DEFAULT_REGION:      $AWS_DEFAULT_REGION
+            APPLICATION_NAME:        'alkemi.fund'
+            COMMAND:                 'deploy-only'
+            VERSION_LABEL:           'alkemi-fund-$BITBUCKET_BUILD_NUMBER'
+            ENVIRONMENT_NAME:        'alkemi-fund-staging'
+            WAIT:                    'true'
+    - step:
+        name:                        "Deploy to Production"
+        deployment:                  production
+        trigger:                     manual
+        script:
+          - echo "Deployment to Production!"
+          - pipe:                    atlassian/aws-elasticbeanstalk-deploy:0.2.3
+            variables:
+              AWS_ACCESS_KEY_ID:     $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              AWS_DEFAULT_REGION:    $AWS_DEFAULT_REGION
+              APPLICATION_NAME:      'alkemi.fund'
+              COMMAND:               'deploy-only'
+              VERSION_LABEL:         'alkemi-fund-$BITBUCKET_BUILD_NUMBER'
+              ENVIRONMENT_NAME:      'alkemi-fund-prod'
+              WAIT:                  'true'
