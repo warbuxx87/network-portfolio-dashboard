@@ -15,7 +15,7 @@ pipelines:
               APPLICATION_NAME:      'alkemi.fund'
               COMMAND:               'upload-only'
               ZIP_FILE:              'application.zip'
-              VERSION_LABEL:         'btc-index-$BITBUCKET_BUILD_NUMBER'
+              VERSION_LABEL:         'alkemi-fund-$BITBUCKET_BUILD_NUMBER'
     - step:
         name:                        "Deploy to Staging"
         deployment:                  staging
