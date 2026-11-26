@@ -1,53 +1,37 @@
-# Welcome to alkemi-fund 👋
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
-[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://alkemi.atlassian.net)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Twitter: ryanbreen87](https://img.shields.io/twitter/follow/ryanbreen87.svg?style=social)](https://twitter.com/ryanbreen87)
+# Network Portfolio Dashboard
 
-> A dashboard and reporting interface for the Alkemi Network
+> Dashboard and reporting interface for a multi-exchange crypto portfolio: live prices, balances and order history. Express · Pug · Docker.
 
-### 🏠 [Homepage](https://alkemi.fund)
+<p>
+<img src="https://img.shields.io/badge/Node.js-5FA04E?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js" />
+<img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white" alt="Express" />
+<img src="https://img.shields.io/badge/Pug-A86454?style=flat-square&logo=pug&logoColor=white" alt="Pug" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+<img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white" alt="AWS" />
+</p>
 
-## Install
+A web dashboard for tracking a fund's positions across exchanges. It shows live coin prices (streamed through `crypto-socket`), balances per exchange, and paginated order and trade history.
 
-```sh
+## How it works
+
+- `routes/` covers `coin`, `exchange` and `users` views, server-rendered with Pug.
+- Live prices stream in over WebSockets, and balances and history are pulled from exchange APIs.
+- Multi-stage Docker builds keep the image small, and it's deployed through AWS CI pipelines.
+
+## Stack
+
+Node.js, Express, Pug, Docker, AWS
+
+## Running locally
+
+```bash
 npm install
+npm start
 ```
 
-## Usage
+## Credits
 
-```sh
-node ,/bin/www
-```
+Built by me at Alkemi, 2018–2019 (277 of 301 commits), with contributions from Kevin Bath and Ben Cooper.
 
-## Run tests
-
-```sh
-npm test
-```
-
-## Build with Docker
-
-```sh
-docker build -t alkemi-fund .
-docker run -p 8080:3000 alkemi-fund
-```
-
-
-## Author
-
-👤 **Ryan Breen**
-
-* Twitter: [@ryanbreen87](https://twitter.com/ryanbreen87)
-* Github: [@warbuxx](https://github.com/warbuxx)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-
-## 📝 License
-
-Copyright © 2019 [Ryan Breen](https://github.com/warbuxx).
-
-This project is [MIT](https://opensource.org/licenses/MIT) licensed.
+---
+<sub>Part of <a href="https://github.com/warbuxx87">Ryan Breen's</a> work · <a href="https://www.linkedin.com/in/breen-ryan/">LinkedIn</a></sub>
